@@ -1,0 +1,30 @@
+\contentsline {section}{\numberline {1}Simple Harmonic Oscillators}{3}% 
+\contentsline {subsection}{\numberline {1.1}Equations of Motion}{3}% 
+\contentsline {subsection}{\numberline {1.2}General Solutions}{3}% 
+\contentsline {subsection}{\numberline {1.3}Energy}{3}% 
+\contentsline {section}{\numberline {2}Damped Harmonic Oscillators}{4}% 
+\contentsline {subsection}{\numberline {2.1}Equations of Motion}{4}% 
+\contentsline {subsection}{\numberline {2.2}General Solutions}{4}% 
+\contentsline {subsection}{\numberline {2.3}Conditions of Damping}{4}% 
+\contentsline {subsubsection}{\numberline {2.3.1}Light Damping}{4}% 
+\contentsline {subsubsection}{\numberline {2.3.2}Critical Damping}{5}% 
+\contentsline {subsubsection}{\numberline {2.3.3}Heavy Damping}{5}% 
+\contentsline {subsection}{\numberline {2.4}Energy}{5}% 
+\contentsline {subsection}{\numberline {2.5}Quality Factor (Q)}{5}% 
+\contentsline {section}{\numberline {3}Forced Harmonic Oscillators and Resonance}{7}% 
+\contentsline {subsection}{\numberline {3.1}Forced Undamped Oscillator}{7}% 
+\contentsline {subsection}{\numberline {3.2}Forced Damped Oscillator}{7}% 
+\contentsline {section}{\numberline {4}Coupled Harmonic Oscillators and Eigenmodes}{8}% 
+\contentsline {subsection}{\numberline {4.1}Coupled Pendulums}{8}% 
+\contentsline {subsection}{\numberline {4.2}Beating Phenomenon}{8}% 
+\contentsline {subsection}{\numberline {4.3}General Solution Method}{8}% 
+\contentsline {section}{\numberline {5}Wave Equation and Standing Waves}{9}% 
+\contentsline {subsection}{\numberline {5.1}Wave Equation}{9}% 
+\contentsline {subsection}{\numberline {5.2}Standing Waves}{9}% 
+\contentsline {section}{\numberline {6}Travelling Waves}{10}% 
+\contentsline {subsection}{\numberline {6.1}Superposition of Modes}{10}% 
+\contentsline {subsection}{\numberline {6.2}Solutions to the Wave Equation}{10}% 
+\contentsline {subsection}{\numberline {6.3}Energy}{10}% 
+\contentsline {subsection}{\numberline {6.4}Reflection and Transmission}{10}% 
+\contentsline {subsection}{\numberline {6.5}Higher Dimensions}{10}% 
+\contentsline {section}{\numberline {7}Wave Packets and Dispersion}{11}% 

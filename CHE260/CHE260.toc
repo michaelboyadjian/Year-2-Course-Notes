@@ -1,0 +1,48 @@
+\contentsline {section}{\numberline {1}Introduction: Brief History of Thermodynamics}{4}% 
+\contentsline {subsection}{\numberline {1.1}First Law of Thermodynamics}{4}% 
+\contentsline {subsection}{\numberline {1.2}Second Law of Thermodynamics}{4}% 
+\contentsline {section}{\numberline {2}Concepts and Definitions}{5}% 
+\contentsline {subsection}{\numberline {2.1}Thermodynamic Systems}{5}% 
+\contentsline {subsubsection}{\numberline {2.1.1}Closed System}{5}% 
+\contentsline {subsubsection}{\numberline {2.1.2}Open System}{5}% 
+\contentsline {subsubsection}{\numberline {2.1.3}Isolated System}{5}% 
+\contentsline {subsection}{\numberline {2.2}Properties}{5}% 
+\contentsline {subsection}{\numberline {2.3}Equilibrium}{5}% 
+\contentsline {subsubsection}{\numberline {2.3.1}Mechanical Equilibrium}{6}% 
+\contentsline {subsubsection}{\numberline {2.3.2}Thermal Equilibrium}{6}% 
+\contentsline {subsubsection}{\numberline {2.3.3}Phase Equilibrium}{6}% 
+\contentsline {subsection}{\numberline {2.4}State and Processes}{6}% 
+\contentsline {subsubsection}{\numberline {2.4.1}Isothermal Process}{6}% 
+\contentsline {subsubsection}{\numberline {2.4.2}Isobaric Process}{6}% 
+\contentsline {subsubsection}{\numberline {2.4.3}Isochoric Process}{6}% 
+\contentsline {subsubsection}{\numberline {2.4.4}Adibiatic Process}{6}% 
+\contentsline {section}{\numberline {3}Thermodynamics System Properties}{7}% 
+\contentsline {subsection}{\numberline {3.1}Mass and Volume}{7}% 
+\contentsline {subsection}{\numberline {3.2}Pressure}{7}% 
+\contentsline {subsection}{\numberline {3.3}Ideal Gas Equation}{7}% 
+\contentsline {subsection}{\numberline {3.4}Modelling Ideal Gases}{7}% 
+\contentsline {subsection}{\numberline {3.5}Internal Energy}{8}% 
+\contentsline {section}{\numberline {4}Energy and the First Law of Thermodynamics}{9}% 
+\contentsline {subsection}{\numberline {4.1}Energy}{9}% 
+\contentsline {subsection}{\numberline {4.2}Energy Transfer}{9}% 
+\contentsline {subsection}{\numberline {4.3}Heat}{9}% 
+\contentsline {subsection}{\numberline {4.4}Work}{9}% 
+\contentsline {subsubsection}{\numberline {4.4.1}Boundary Work}{10}% 
+\contentsline {subsubsection}{\numberline {4.4.2}Flow Work}{10}% 
+\contentsline {subsection}{\numberline {4.5}First Law of a Control Mass}{10}% 
+\contentsline {subsection}{\numberline {4.6}Enthalpy}{10}% 
+\contentsline {subsection}{\numberline {4.7}Specific Heats of Ideal Gases}{11}% 
+\contentsline {subsection}{\numberline {4.8}Steady Mass Flow Through a Control Volume}{11}% 
+\contentsline {section}{\numberline {5}Entropy}{12}% 
+\contentsline {subsection}{\numberline {5.1}A New Extensive Property: Entropy}{12}% 
+\contentsline {subsection}{\numberline {5.2}Second Law of Thermodynamics}{12}% 
+\contentsline {subsection}{\numberline {5.3}Reversible and Irreversible Processes}{12}% 
+\contentsline {subsection}{\numberline {5.4}Third Law of Thermodynamics}{12}% 
+\contentsline {subsection}{\numberline {5.5}Production of Entropy}{13}% 
+\contentsline {section}{\numberline {6}The Second Law of Thermodynamics}{14}% 
+\contentsline {subsection}{\numberline {6.1}Change in Entropy}{14}% 
+\contentsline {subsection}{\numberline {6.2}Isentropic Processes}{14}% 
+\contentsline {subsection}{\numberline {6.3}Control Mass Analysis}{14}% 
+\contentsline {subsection}{\numberline {6.4}Isentropic Efficiency}{15}% 
+\contentsline {section}{\numberline {7}Phase Equilibrium}{16}% 
+\contentsline {section}{\numberline {8}Refrigerators}{16}% 

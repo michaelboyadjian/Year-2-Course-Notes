@@ -1,0 +1,107 @@
+\documentclass[11pt]{article}
+\usepackage{fullpage}
+\usepackage{amsmath}
+\usepackage{graphicx}
+\linespread{1.1}
+
+
+\begin{document}
+
+\title{PHY293 \\ Waves and Modern Physics}
+\author{Michael Boyadjian}
+\maketitle
+\pagebreak
+
+\tableofcontents
+
+\pagebreak
+
+\section{Simple Harmonic Oscillators}
+\subsection{Equations of Motion}
+If we look at a mass attached to a spring, we can model its motion using Hooke's Law:
+$$ F = -kx_0$$
+The negative indicates that this is a restoring force that brings it back to the origin. The constant $k$ shows that the force is proportional to the distance from the rest state.
+\\ \\
+Now if the spring is released, it must obey Newton's second law. Therefore the motion can be modelled as
+$$ m \ddot x = -kx$$a second-order ordinary differential equation.
+\subsection{General Solutions}
+To consider the solution to this equation, let's define $\omega ^2 = \frac{k}{m}$, ($\omega = \frac{2\pi}{T}$ as well), which is called the \textit{angular frequency}. This allows us to represent this differential equation as $$ \ddot x + \omega ^2x = 0$$
+Thus, the solution to this problem would be $$ x(t) = Acos(\omega t+\phi) \quad \quad \quad \text{or} \quad \quad \quad x(t) = A_1cos(\omega t) + A_2sin(\omega t)$$
+where $A$ is the amplitude and $\phi$ is the phase shift, which can be determined by given initial values. Using what is given and our known equation, we can then solve for whatever unknown variables. It may also be important to remember that the velocity (first-derivative of position) is 
+$$\dot x(t) = v(t) = -A\omega sin(\omega t + \phi )$$
+\subsection{Energy}
+Energy is an important tool to solve problems, simple harmonic oscillators being no exception. Without their dissipation, their mechanical energy stay the same forever. The total energy of a simple harmonic oscillator is simply the sum of its kinetic energy (KE) and potential energy (PE).
+$$ E = KE + PE = \frac{1}{2}mv^2 + \frac{1}{2}kx^2 = \frac{1}{2}kA^2$$
+which is a constant. The above equation shows us that the energy is proportional to the square of the amplitude.
+\pagebreak
+\section{Damped Harmonic Oscillators}
+\subsection{Equations of Motion}
+Realistically, we have to consider friction in the motion of a spring-mass system. This friction force is proportional to its velocity:
+$$ F_d = -b \dot x$$
+With this we can now define a new equation of motion:
+$$ m\ddot x + kx + b\dot x = \ddot x + \gamma \dot x + \omega_0 ^2 x = 0$$ where $\gamma = \frac{b}{m}$ is called the \textit{damping factor} and $\omega_0 ^2$ is now the natural frequency of the oscillator - frequency if there was no damping. This tells us there could be multiple natural frequencies.
+\subsection{General Solutions}
+If we look at our equation from above, it's a second-order differential equation. The solution to it gives two roots, meaning that any solution can be a linear combination of both. This most general solution exists as
+$$x(t) = a_pe^{r_pt}+ a_me^{r_mt}$$
+where $r_p$ and $r_m$ are the roots of the equation:
+$$r_p = -\frac{\gamma}{2}+\sqrt{\frac{\gamma^2}{4}-\omega_0^2}
+\quad \quad \quad r_m = -\frac{\gamma}{2}-\sqrt{\frac{\gamma^2}{4}-\omega_0^2}$$
+Note that this will not work if $\omega^2 = \frac{\gamma^2}{4}$, as we will see in conditions of damping.
+\subsection{Conditions of Damping}
+There are 3 cases of damping we can consider, which we can characterize as light damping ($\frac{\gamma^2}{4} < \omega_0^2$), critical damping ($\frac{\gamma^2}{4} = \omega_0^2$), and heavy damping ($\frac{\gamma^2}{4} > \omega_0^2$).
+\subsubsection{Light Damping}
+For light damping to occur, we consider the case where $\frac{\gamma^2}{4} < \omega_0^2$. When this happens, the general solution becomes $$x(t) = Ae^{\frac{\gamma t}{2}}cos( \omega t + \phi) \quad \quad  \rightarrow  \quad \quad \omega = \sqrt{\omega_0 ^2 - \frac{\gamma ^2}{4}}$$
+A graph of the lightly damped model shows the decaying amplitude. We see that there is actually a factor by which this occurs 
+$$ ln(\frac{A_n}{A_{n+1}}) = e^{\frac{\gamma T}{2}}$$ which is known as the \textbf{logarithmic decrement}
+\subsubsection{Critical Damping}
+This is an interesting case. Since $\omega_o^2 - \frac{\gamma^2}{4} = 0$, then $r_p = r_m = -\frac{\gamma}{2}$. Therefore, our general solution becomes
+$$ x(t) = (a_p + a_m)e^{-\frac{\gamma t}{2}}$$ But this would not work as it could easily become an over constrained problem. So, the general solution actually becomes:
+$$ x(t) = (A+Bt)e^{-\frac{\gamma t}{2}}$$
+\subsubsection{Heavy Damping}
+Heavy damping occurs when a system returns to its equilibrium without any oscillations. This is when $\frac{\gamma^2}{4} > \omega_0^2$. The general solution for this case is 
+$$x(t) = e^{\frac{-\gamma t}{2}}(Ae^{\alpha t} + Be^{-\alpha t})$$
+\subsection{Energy}
+The energy of a damped oscillator eventually dissipates over time. We can find the rate at which this occurs by looking at the change in the total energy, which is given by: $$ E = KE + PE = \frac{1}{2}mv^2 + \frac{1}{2}kx^2$$ We find that the energy can be modelled by the equation:
+$$E(t) = E_0e^{-\gamma t}$$
+where $E_0$ is the initial energy at $t=0$ and $\frac{1}{\gamma}$ tells us the time it takes for the energy to decay by a factor of $e$. We can define $\tau = \frac{1}{\gamma}$ and show this equation as 
+$$ E(t) = E_0e^{\frac{-t}{\tau}}$$ where $\tau$ is called the \textbf{decay time} or \textbf{time constant} of the system
+\subsection{Quality Factor (Q)}
+For energy saving purposes, we want a system to do as little driving as possible, meaning the less damping the better. To measure this, we define the Quality Factor (Q), measured by the ratio
+$$Q = \frac{\text{tendency to oscillate}}{\text{tendency to damp}}$$
+In our lightly damped system, oscillations last longer when $\gamma << 2\omega_0$, so a 'high quality' is achieved when $$ Q = \frac{\omega_0}{\gamma}$$
+We can now write the pseudo angular frequency as 
+$$ \omega_d^2 = \omega_0^2(1 - \frac{1}{4Q^2})$$
+This can also be thought of as the number of oscillations an oscillator will achieve in a lifetime. If we define $\tau = \frac{1}{\gamma}$ and $n=\frac{\tau}{T_0}$, then the quality factor will be $$Q = 2\pi n$$
+\pagebreak
+\section{Forced Harmonic Oscillators and Resonance}
+Remember the following for this chapter:
+\begin{itemize}
+\item If an oscillator is driven at frequency $\omega$, then it will oscillate at $\omega$, regardless of the values of $\omega_0$ and $\gamma$
+\item If an oscillator is driven at $\omega \approx \omega_0$, then it will resonate
+\item At resonance, the amplitude is approximately $A \approx QA_f$
+\item The resonance frequency is exactly $\omega_0$ because it is where the peak in velocity response and power absorption are both located.
+\end{itemize}
+\subsection{Forced Undamped Oscillator}
+Consider the SHO we discussed earlier, but this time with an engine attached to the system. If the oscillator is being driven at a frequency $\omega$ and applying a force with amplitude, $F_0$ , its equation of motion could be modelled as $$ \ddot x + \omega_0^2 x = \frac{F_0}{m} \cos (\omega t)$$
+\subsection{Forced Damped Oscillator}
+\pagebreak
+\section{Coupled Harmonic Oscillators and Eigenmodes}
+\subsection{Coupled Pendulums}
+\subsection{Beating Phenomenon}
+\subsection{General Solution Method}
+\pagebreak
+\section{Wave Equation and Standing Waves}
+\subsection{Wave Equation}
+\subsection{Standing Waves}
+\pagebreak
+\section{Travelling Waves}
+\subsection{Superposition of Modes}
+\subsection{Solutions to the Wave Equation}
+\subsection{Energy}
+\subsection{Reflection and Transmission}
+\subsection{Higher Dimensions}
+\pagebreak
+\section{Wave Packets and Dispersion}
+
+
+\end{document}

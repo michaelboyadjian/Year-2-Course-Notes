@@ -1,0 +1,271 @@
+\documentclass[11pt]{article}
+\usepackage{fullpage}
+\usepackage{amsmath}
+\usepackage{graphicx}
+\linespread{1.1}
+
+
+\begin{document}
+
+\title{CHE260 \\ Thermodynamics and Heat Transfer}
+\author{Michael Boyadjian}
+\maketitle
+\pagebreak
+
+\tableofcontents
+
+\pagebreak
+
+\section{Introduction: Brief History of Thermodynamics}
+\subsection{First Law of Thermodynamics}
+States that energy cannot be created or destroyed. For the case of an engine:
+$$ Q_H = W + Q_C$$
+It's efficiency is calculated using:
+$$ \eta_th = \frac{W}{Q_H} =  \frac{Q_H - Q_C}{Q_H} = 1 - \frac{Q_C}{Q_H}$$
+\subsection{Second Law of Thermodynamics}
+Clausius postulated that heat transfer makes another, previously undefined property of the engines increase by an amount $\frac{Q_H}{T_H}$. This property is called \textbf{entropy}. Adding or removing energy to any system in the form of heat changes its entropy. \\ \\
+The second law states that over a cycle, the net change in entropy of an engine must also be zero.
+$$\Delta S = \frac{Q_H}{T_H} - \frac{Q_C}{T_C} = 0$$
+\pagebreak
+\section{Concepts and Definitions}
+\subsection{Thermodynamic Systems}
+A \textbf{system} can be any piece of matter or space that we identify for purposes of analysis. The \textbf{surroundings} are everything outside the system and the \textbf{boundary} is what separates the system from its surroundings.
+\subsubsection{Closed System}
+\begin{itemize}
+\item The amount of mass is fixed and no mass crosses the system boundary
+\item Energy in the form of heat or work can enter or leave the system
+\item Volume is not fixed and may be compressed or expanded
+\end{itemize}
+\subsubsection{Open System}
+\begin{itemize}
+\item Both energy and mass can cross the boundaries
+\item Boundaries may change in shape or move in space
+\end{itemize}
+\subsubsection{Isolated System}
+\begin{itemize}
+\item No mass or energy crosses the boundary
+\item The properties, once at equilibrium, will never change
+\end{itemize}
+\subsection{Properties}
+A \textbf{property} of a system is any attribute that can be measured without knowing the history of the system.
+\begin{itemize}
+\item \textbf{Intensive} properties are those that can be specified at a point within the system and are independent of system mass. Examples would be \textit{temperature} or \textit{pressure}. 
+\item \textbf{Extensive} properties depend on the size of the system. These include \textit{mass}, \textit{volume}, and \\ \textit{energy}.
+\end{itemize}
+Taking any extensive property and dividing it by the mass yields a new intensive property. 
+$$ v = \frac{V}{m} \quad \quad \quad \rho = \frac{m}{V} = \frac{1}{v} \quad \quad \quad e = \frac{E}{m}$$
+\subsection{Equilibrium}
+All physical systems that are left isolated will eventually reach a state of equilibrium where their properties do not change with time. 
+\subsubsection{Mechanical Equilibrium}
+\begin{itemize}
+\item Pressure in a system is the same everywhere
+\end{itemize}
+\subsubsection{Thermal Equilibrium}
+\begin{itemize}
+\item Temperature in a system is the same everywhere
+\end{itemize}
+\subsubsection{Phase Equilibrium}
+\begin{itemize}
+\item No more phase change within a system
+\end{itemize}
+\subsection{State and Processes}
+A complete list of properties defines the state of the system. The change of a system from one state to another is called a process.
+\subsubsection{Isothermal Process}
+\begin{itemize}
+\item Temperature of the system remains constant
+\end{itemize}
+\subsubsection{Isobaric Process}
+\begin{itemize}
+\item Pressure of the system remains constant
+\end{itemize}
+\subsubsection{Isochoric Process}
+\begin{itemize}
+\item Volume of the system remains constant
+\end{itemize}
+\subsubsection{Adibiatic Process}
+\begin{itemize}
+\item No heat is added or removed from the system
+\item A system whose boundaries are perfectly isolated will undergo this process
+\end{itemize}
+\pagebreak
+\section{Thermodynamics System Properties}
+\subsection{Mass and Volume}
+Mass and volume are the two most obvious ways to describe the quantity of a substance and the amount of space that it occupies. The mass of a molecule is known as its molar mass.
+$$m = N \times mm   $$
+\subsection{Pressure}
+A gas confined to a closed vessel exerts a force (F) on it due to gas molecules hitting the walls of the vessel and rebounding . This force, divided by the area (A) on which it is acting, is known as the gas pressure:
+$$ P = \frac{F}{A} $$
+We can define the gas pressure or absolute pressure as:
+$$P_{gas} = \rho gh + P_{atm} \quad \quad \quad P_{abs} - P_{atm} = \rho gh $$
+We can also define the gauge pressure as:
+$$ P_{gauge} = P_{abs} - P_{atm}$$
+\subsection{Ideal Gas Equation}
+By combining the Avogadro, Boyle, and Charles equations, we have been able to come up with the \textbf{ideal gas equation}:
+$$ PV = NR_uT$$ 
+where $R_u$ is known as the \textit{universal gas constant}. It has been experimentally found to have the same value for all gases:
+$$ R_u = 8.314 \text{ kJ/mol} $$
+We can use kilograms instead of mols in this equation, by using the relation $m = NM$, and we can also define a particular gas constant $R = \frac{R_u}{M}$.
+$$ PV = \frac{m}{M}R_uT \quad \quad \quad PV = mRT$$
+\subsection{Modelling Ideal Gases}
+The kinetic theory of gases is based on several simplifying assumptions:
+\begin{enumerate}
+\item A gas is made of a very large number of elementary particles called molecules that are in constant, random motion. All molecules have the same mass
+\item The total number of molecules is very large. 
+\item Molecules collide perfectly elastically with each other and with the walls of the container. They obey Newton’s laws during collisions. 
+\item There is no force acting on molecules except during collisions. 
+\item The volume of molecules is negligible – they are considered to be point masses.
+\end{enumerate}
+\subsection{Internal Energy}
+The internal energy (U) is the total energy of all the molecules in a substance. The internal energy is an extensive property with units of joules, given for a monoatomic, ideal gas by
+$$U = \frac{3}{2}NR_uT$$
+The internal energy of an ideal gases depends only on temperature. The change in specific internal energy of an ideal gas is 
+$$ u_2 - u_1 = c(T_2-T_1)$$ 
+where c is the specific heat. For gases that do not behave ideally, or for liquids and solids, internal energy can, in general, depend on both pressure and temperature.
+
+\pagebreak
+
+\section{Energy and the First Law of Thermodynamics}
+\subsection{Energy}
+Energy is an extensive property of all thermodynamic systems. A system possesses energy if it is capable of lifting a weight. Potential energy and kinetic energy are \textbf{macroscopic} forms of energy, and altering them requires a change in the position or velocity of the system. Internal energy includes all \textbf{microscopic} forms of energy storage. The total energy (E) of a system is the sum of its potential (PE), kinetic (KE) and internal (U) energies: 
+$$ E = PE + KE + U$$ The specific energy is an intensive property and is the sum of its specific kinetic, potential and internal energies:
+$$e = \frac{E}{m} = gz + \frac{1}{2}V^2 + u$$
+
+ 
+\subsection{Energy Transfer}
+Energy can be transferred to or from a system in two ways: as \textbf{work} or \textbf{heat}. Heat transfer is \textit{"an exchange of energy that occurs due to a temperature difference between a system and its surroundings"}. All other energy transfer is classified as work.
+\begin{itemize}
+\item Net heat is given by $Q_{net} = \sum_{i}^n Q_i$
+\item Net work is given by $W_{net} = \sum_{i}^n W_i$
+\item The rate of doing work, \textbf{power}, is given by  $\dot W = \frac{\delta W}{dt}$
+\item Mechanical work done by a force $F$ through an infinitesimal distance $dx$ is $\delta W = Fdx$
+\item The power expended in applying a force is $\dot W = \frac{\delta W}{dt} = F \frac{dx}{dt} = F\textbf{V}$
+\item The rate of heat transfer, in \textbf{watts}, is given by  $ \dot Q = \frac{\delta Q}{dt}$
+\end{itemize}
+We can also talk about work or heat transfer per unit mass of a system:
+$$ w = \frac{W}{m} \quad \quad \quad q = \frac{Q}{m}$$
+\subsection{Heat}
+Heat transfer is a mode of energy transport that occurs when a temperature difference exists. This occurs at the microscopic level with no macroscopic displacement. Heat conduction also occurs in all materials.
+\subsection{Work}
+Work is energy transfer across the boundary of a closed system in the absence of any temperature difference. 
+\subsubsection{Boundary Work}
+Occurs when a force acts on the boundaries of a system and deforms them, either expanding or compressing the system.
+\\ \\
+For example, when a piston compresses a container, the work done would be
+$$ \delta W = Fdx = PAdx = -PdV$$
+The work in compressing a gas from state 1 to state 2 in which the volume changes from $V_1$ to $V_2$ is given by $$ W_{12} = - \int_{V_1}^{V_2}PdV$$
+\begin{itemize}
+\item For constant volume: $ W_{12} = - \int_{V_1}^{V_2}PdV = 0$
+\item For constant pressure: $ W_{12} = - \int_{V_1}^{V_2}PdV = P(V_1 - V_2)$
+\item For constant temperature: $ W_{12} = - \int_{V_1}^{V_2}PdV = -\int_{V_1}^{V_2}\frac{mRT}{V} dV = -mRT\int_{V_1}^{V_2}\frac{dV}{V}= mRT \ln{\frac{V_1}{V_2}}$
+\item For a polytropic process: $ W_{12} = - \int_{V_1}^{V_2}PdV = -C\int_{V_1}^{V_2} \frac{dV}{V^n}$
+\begin{itemize}
+\item If $n = 1$: $ W_{12} = C\ln{\frac{V1}{V2}}= P_{2} V_{2}\ln{\frac{V1}{V2}} $
+\item If $n \neq 1$: $W_{12} = \frac{P_2V_2 - P_1V_1}{n-1} $
+\end{itemize}
+\end{itemize}
+\subsubsection{Flow Work}
+To drive a fluid into a control volume, a force must act a through a distance, which is known as flow work
+$$ W_{flow} = FL = PAL = PV$$
+\subsection{First Law of a Control Mass}
+We've discovered energy as an extensive property in all thermodynamics. We can combine the definition of heat transfer and work  to give the first law of thermodynamics:
+$$ Q + W = \Delta E \quad \quad \Delta E = \Delta U + \Delta PE + \Delta KE \quad \quad \Delta E = E_{final} - E_{initial}$$
+\subsection{Enthalpy}
+Enthalpy is the capacity of a fluid to do work. It is mathematically defined as $$ H = U + PV$$
+\subsection{Specific Heats of Ideal Gases}
+In order to relate internal energy ($U$) and enthalpy ($H$) to pressure ($P$), volume ($V$), and temperature ($T$), we define specific heat, which is \textit{"the amount of energy required to raise the temperature of a unit mass of a substance by one degree"}.
+$$ c_{avg} = \frac{Q}{m \Delta T} = \frac{q}{\Delta T}$$
+Specific heat at a constant volume is defined as 
+$$ C_v(T) = \left(\frac{\partial u}{\partial T}\right)_v$$
+Specific heat at a constant pressure is defined as 
+$$ C_p(T) = \left(\frac{\partial h}{\partial T}\right)_p$$
+For an ideal gas,
+$$ c_p = c_v + R $$
+\subsection{Steady Mass Flow Through a Control Volume}
+The mass flow through a control volume is 
+$$ \dot m = \frac{AV}{v}$$
+At steady state,
+$$ \sum_{i} \dot m_i = \sum_{e} \dot m_i $$
+The energy balance for a control volume at steady state is 
+$$ \dot Q + \dot W = \dot m \left[(h_2-h_1) + \frac{\text{V}_2^2 - \text{V}_1^2}{2} + g(z_2 - z_1)\right]$$
+\pagebreak
+\section{Entropy}
+\subsection{A New Extensive Property: Entropy}
+Entropy is a property that measures the quality of heat and tells us how efficiently it can be transformed to work. This changes whenever heat is added or removed from a system.
+$$ Entropy \text{ } Change = \frac{Heat \text{ }Transferred}{Temperature \text{ }Change}$$
+Entropy and energy are related properties, but there is an important difference to note: \textit{energy is conserved, but entropy can be generated}. \\
+The change in entropy of a thermal reservoir being heated or cooled is
+$$ \Delta S = \frac{Q}{T}$$
+\subsection{Second Law of Thermodynamics}
+The second law of thermodynamics states that \textit{"The entropy of an isolated system will increase until the system reaches a state of equilibrium. The entropy of an isolated system in equilibrium remains constant". Stated mathematically:}
+$$ dS_{isolated} > 0 \text{ for an isolated system not in equilibrium}$$
+$$ dS_{isolated} = 0 \text{ for an isolated system in equilibrium} $$
+$$ dS_{isolated} < 0  \text{ not possible for an isolated system}$$
+\subsection{Reversible and Irreversible Processes}
+A \textbf{reversible} process is one that can be reversed by an infinitesimal change in the surroundings so that both the system and surroundings are restored to their initial conditions
+\\ \\
+Processes that are both reversible and adiabatic produce no change in entropy and are called \textbf{ isentropic }processes.
+\\ \\
+A \textbf{reversible} process generates no entropy while an \textbf{irreversible} process generates entropy.
+$$ S_{gen} = 0 \text{ for a reversible process}$$
+$$ S_{gen} > 0 \text{ for an irreversible process}$$
+
+\subsection{Third Law of Thermodynamics}
+The entropy of a pure substance in thermodynamic equilibrium is zero at a temperature of absolute zero.
+
+\subsection{Production of Entropy}
+Each individual distribution of molecules among available energy states, which satisfies the constraints imposed, is a microstate of the system. The macrostate of the system is defined by macroscopic properties such as energy and volume. The equilibrium macrostate of any system is the one that has the largest number of corresponding microstates. The molecular definition of entropy is 
+$$ S = k \ln{\Omega} $$
+If a system goes from an initial state with $\Omega_1$ microstates to a final state with $\Omega_2$ microstates, the change in entropy is
+$$ S = k \ln{\frac{\Omega_1}{\Omega_2}} $$
+The entropy change for a monoatomic ideal gas is
+$$ \Delta S = NR_u\left[\ln{\frac{V_2}{V_1}}+\frac{3}{2}\ln{\frac{T_2}{T_1}} \right] = mR\left[\ln{\frac{V_2}{V_1}}+\frac{3}{2}\ln{\frac{T_2}{T_1}} \right]$$
+\pagebreak
+
+\section{The Second Law of Thermodynamics}
+\subsection{Change in Entropy}
+For incompressible liquids and solids, the change in entropy is:
+$$ \Delta s = s_2 - s_1 = c_{avg} \ln \frac{T_2}{T_1} $$
+For ideal gases with constant specific heats, the change in entropy is:
+$$ \Delta s = s_2 - s_1 = c_v \ln \frac{T_2}{T_1} + R\ln \frac{v_2}{v_1} $$
+$$ \Delta s = s_2 - s_1 = c_v \ln \frac{P_2}{P_1} + c_p \ln \frac{v_2}{v_1} $$
+$$  \Delta s = s_2 - s_1 = c_v \ln \frac{T_2}{T_1} + R\ln \frac{P_2}{P_1} $$
+\subsection{Isentropic Processes}
+Remember that an isentropic process is one that is both adiabatic and reversible. For an ideal gas undergoing an isentropic process:
+$$ \frac{T_2}{T_1} = \left(\frac{v_1}{v_2}\right)^{\gamma - 1} \quad \quad \frac{T_2}{T_1} = \left(\frac{P_2}{P_1}\right)^{\frac{\gamma - 1}{\gamma}} \quad \quad \frac{P_2}{P_1} = \left(\frac{v_1}{v_2}\right)^{\gamma}$$
+\smallskip
+$$ Pv^\gamma = constant$$
+\subsection{Control Mass Analysis}
+For a control mass at a constant temperature $(T)$:
+$$ \Delta S = \frac{Q_{12}}{T}$$
+The entropy balance for a control mass is 
+$$ \Delta S = S_{in} - S_{out} + S_{gen} $$
+For an isentropic system at steady state:
+$$ s_2 = s_1$$
+\subsection{Isentropic Efficiency}
+For a turbine:
+$$ \eta_t = \frac{w_t}{w_{t,s}} = \frac{h_2 - h_1}{h_{2s} - h1}$$
+For a nozzle:
+$$ \eta_{nozzle} = \frac{V_2^2}{V_{2s}^2}$$
+For a compressor or pump:
+$$ \eta_c = \frac{w_{c,s}}{w_{s}} = \frac{h_{2s} - h_1}{h_s - h1}$$
+\pagebreak
+\section{Phase Equilibrium}
+The quality of a liquid-vapour mixture is defined as
+$$ x = \frac{\text{mass of vapour}}{\text{mass of mixture}} = \frac{m_g}{m} $$
+By knowing this, we can find the properties of specific volume, specific internal energy, specific enthalpy, and specific entropy
+$$ v = xv_g + (1-x)v_f$$
+$$ u = xu_g + (1-x)u_f$$
+$$ h = xh_g + (1-x)h_f$$
+$$ s = xs_g + (1-x)s_f$$
+
+\section{Refrigerators}
+The thermal efficiency of a heat engine is given as 
+$$ \eta_{th} = \frac{\text{net work output}}{\text{heat input}} = \frac{W_{net}}{Q_{in}}$$
+The thermal efficiency of a \textbf{Carnot} engine is:
+$$\eta_{th, carnot} = 1 - \frac{Q_C}{Q_H} = 1 - \frac{T_C}{T_H}$$
+The Carnot principles state the following:
+\begin{enumerate}
+\item The efficiency of a reversible heat engine is always greater than that of an irreversible engine operating between the same two temperatures.
+\item The efficiencies of all reversible heat engines operating between the same two temperatures are the same.
+\end{enumerate}
+\end{document}

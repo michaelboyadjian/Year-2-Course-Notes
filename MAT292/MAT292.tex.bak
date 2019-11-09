@@ -1,0 +1,183 @@
+\documentclass[11pt]{article}
+\usepackage{fullpage}
+\usepackage{amsmath}
+\usepackage{graphicx}
+\linespread{1.1}
+
+
+\begin{document}
+
+\title{MAT292 \\ Calculus III}
+\author{Michael Boyadjian}
+\maketitle
+\pagebreak
+
+\tableofcontents
+
+\pagebreak
+\section{Introduction}
+\subsection{Phase Lines and Direction Fields}
+A first order \textbf{autonomous} differential equation is in the form 
+$$ \frac{dy}{dt} = f(y)$$ 
+This means that the independent variable, $t$, does not appear on the right side of the equation. Other examples include:
+$$x' = \sin x \quad \quad \quad p'  = rp\left(1-\frac{p}{k}\right)$$
+The first step n qualitative analysis is to find the constant solutions, where $f(y) = c$. In these cases, $\frac{dy}{dt} = 0$ and is considered an \textbf{equilibrium} solution. These are also referred to as critical points, stationary points, and fixed points.
+\\ \\
+We can graph the $f(y)$ vs $y$ in what is known as the  \textbf{phase line} or \textbf{one dimensional phase portrait} to see the behaviour of $y'$. Seeing when $y'$ is increasing or decreasing, we can use the information to then sketch a \textbf{integral curve} where we can sample plots of $y$ vs $t$
+\subsection{Definitions, Classification, and Terminology}
+\begin{itemize}
+\item \textbf{Differential Equation:} An equation that contains de derivatives of one or more unknown functions with respect to one or more independent variables is said to be a differential  equation.
+\item \textbf{Ordinary Differential Equation (ODE):} The unknown function (or functions) depends on a single variable and its derivatives are ordinary derivatives.
+\item \textbf{Partial Differential Equation (ODE):} The unknown function (or functions) depends on more than one independent variable and partial derivatives appear in the equation
+\item \textbf{Order:} The order of the highest derivative, ordinary or partial, that appears in the equation
+\item \textbf{Linear:} An ODE is linear considered linear if it can be written in the form $$a_0(t)y^n + a_1(t)y^{n-1} + \cdots + a_n(t)y = g(t)$$ where the functions $a_0$, $a_1$, $\cdots$, $a_n$ depend at most on the independent variable $t$.
+\begin{itemize}
+\item \textbf{Homogeneous:} $g(t) = 0$ for all $t$
+\item \textbf{Non-Homogeneous:} $g(t) = f$
+\end{itemize}
+\item \textbf{Non-Linear:} An ODE is non-linear if it cannot take the form of a linear equation
+\end{itemize}
+
+\pagebreak
+\section{1st Order Differential Equations}
+\subsection{Separable Equations}
+Consider a first order linear differential equation of form $\frac{dy}{dx} = f(x,y)$. If the right side of this equation, $f(x,y)$ can be broken down to $p(x)q(y)$, it is classified as a separable equation.
+$$\frac{dy}{dx} = f(x,y) = p(x)q(y)$$
+This is easily solved by rearranging the equation to isolate the $x$ and $y$ variables and then integrating to find a general solution.
+\subsection{Method of Integrating Factors}
+A differential equation is said to be a \textbf{first order linear equation} if it can be written in the form
+$$\frac{dy}{dx} + p(t)y = g(t) \quad \quad \rightarrow \quad \quad y' +py = g$$
+\underline{The solution can be found by going through the following steps:}
+\begin{enumerate}
+\item Put the equation in standard form $y' +py =g$
+\item Calculate the integrating factor $\mu (t) = e^{\int p(t)dt}$
+\item Multiply the equation by $\mu (t)$ and write in the form $[\mu (t)y]' = \mu (t)g(t)$
+\item Integrate this equation to obtain $ \mu (t)y = \int \mu(t)g(t)dt + C$
+\item Solve for $y$
+\end{enumerate}
+\subsection{Differences Between Linear and Non-Linear Equations}
+Before attempting a problem it is important to know if there is even a solution t it. This is where we can discuss the \textbf{existence and uniqueness of solutions}. There are theorems which cover this for both linear and non-linear equations.\\ \\
+\textbf{For Linear Equations (Theorem 2.4.1):}
+If the functions $p$ and $g$ are continuous on an open interval $I = (\alpha, \beta)$ containing the point $t = t_0$, there exists a unique function $y = \Phi(t)$ that satisfies the differential equation
+$$ y' + p(t)y = g(t)$$
+for each $t$ in $I$, and that also satisfies the initial condition,
+$$y(t_0) = y_0$$
+where $y_0$ is an arbitrary prescribed value. \\\\
+A quick summary of the properties of linear differential equations:
+\begin{enumerate}
+\item Assuming the coefficients are continuous, there is a general solution, containing an arbitrary constant, that includes all solutions
+\item There is an expression for the solution
+\item The possible points of discontinuity or singularities can be identified by finding the points of discontinuity of the coefficients
+\end{enumerate}
+\textbf{For Non-Linear Equations (Theorem 2.4.2):} Let the functions $f$ and $\frac{\partial f}{\partial y}$ be continuous in some rectangle $ \alpha < t < \beta $, $\gamma < t < \delta$ containing the point $(t_0, y_0)$. Then in some interval $t_0 - h < t < t_0 + h$ contained in $\alpha < t < \beta$, there is a unique solution $y=\Phi(t)$ of the initial value problem,
+$$y'(t) = f(t, y) \quad \quad \quad y(t_0) = y_0$$
+Looking at the properties of linear differential equations, none of them are true in general, for non-linear equations. It comes down to a case-by-case basis
+\subsection{Autonomous Equations and Population Dynamics}
+As previously mentioned, an autonomous equation takes the form
+$$ \frac{dy}{dt} = f(y)$$
+\subsubsection{Exponential Growth}
+The simplest analysis of population occurs with the assumption that the rate of change of the population is proportional to the current value of the population. This is modelled as
+$$ \frac{dP}{dt} = rP$$ where $r$ is the rate of growth or decline depending on its sign. Given the initial condition $P(0) = P_0$, the solution is given as 
+$$ P(t) = P_0e^{rt}$$
+\subsubsection{Logistic Growth}
+We replace the constant $r$ with a function $h?(P)$ from the previous equation to obtain the modified one 
+$$ P(t) = h(P)\cdot P$$
+We choose $h(P) = r-aP$ where $a$ is also a positive constant. The equation now becomes
+$$P(t) = (r-aP)P = r\left(1-\frac{P}{K}\right) P$$
+where $K=\frac{r}{a}$ and is known as the intrinsic growth rate
+
+\subsection{Exact Equations}
+Let the functions $M$, $N$, $M_y$, and $N_x$, where subscripts denote partial derivatives, be continuous in the rectangular  region $R$: $\alpha < x < \beta$, $\gamma < y < \delta$. Then, $$M(x,y)+N(x,y)y' = 0$$ , is an exact differential equation in $R$ if and only if $$M_y(x,y)=N_x(x,y)$$ at each point of $R$. That is, there exists a function $\psi$ satisfying $$\psi_ x(x,y)=M(x,y) \quad \quad \psi_y(x,y)=N(x,y)$$ 
+
+\pagebreak
+
+\section{Systems of 2 1st Order Equations}
+\subsection{Systems of Two First Order Linear Differential Equations}
+The general system of two first order linear differential equations is
+$$\begin{bmatrix}
+dx/dt \\
+dy/dt
+\end{bmatrix}
+= \begin{bmatrix}
+P_{11}(t)x + P_{12}(t)y + g_1(t) \\
+P_{21}(t)x + P_{22}(t)y + g_2(t) \\
+\end{bmatrix}$$
+We can also rewrite this in vector form $\frac{d \vec{X}}{dt} = \vec{P}(t)\vec{X}+g(t)$:
+$$\begin{bmatrix}
+dx/dt \\
+dy/dt
+\end{bmatrix}
+= \begin{bmatrix}
+P_{11}(t) + P_{12}(t)\\
+P_{21}(t) + P_{22}(t)\\
+\end{bmatrix}
+\begin{bmatrix}
+x \\
+y
+\end{bmatrix}
++
+\begin{bmatrix}
+g_1(t) \\
+g_2(t)
+\end{bmatrix}
+$$
+Since we are often looking for a specific solution to a problem, we need to specify the initial conditions.
+$$ x(t_0) = x_0 \quad \quad \text{and} \quad \quad y(t_0) = y_0$$
+\subsection{Homogeneous Linear Systems with Constant Coefficients}
+\subsubsection{Reducing $\vec{x}' = A\vec{x} + \vec{b}$ to $\vec{x}' = A\vec{x}$}
+If the coefficient matrix $A$ is invertible, we know that the only critical or equilibrium point of $\vec{x'} = A\vec{x} + \vec{b}$ is $\vec{x}_{eq} = -A^{-1}\vec{b}$. In these cases, it is convenient to shift the origin of the phase plane to the equilibrium solution using
+$$\vec{x} = \vec{x}_{eq} + \vec{\tilde{x}}$$
+We can see that $\vec{\tilde{x}} = \vec{x} - \vec{x}_{eq}$ represents the difference between $\vec{x}$ and the equilibrium state, $\vec{x}_{eq}$. Thus, we get that
+$$\frac{d\vec{\tilde{x}}}{dt} = \vec{\tilde{x}}' = A\vec{\tilde{x}}$$
+\subsubsection{Principle of Superposition}
+If $x_1(t)$ and $x_2(t)$ are solutions to  $$\vec{x}'(t) = A\vec{x}(t)$$ then the expression $$\vec{x}(t) = C\vec{x}_1(t) + D\vec{x}_2(t)$$ where $C$ and $D$ are arbitrary constants, is also a solution
+\subsubsection{Wronskian and Linear Independence}
+Suppose that $$x_1(t) = \begin{pmatrix}
+x_{11}(t) \\
+x_{21}(t)
+\end{pmatrix} \quad \quad \text{and} \quad \quad x_2(t) = \begin{pmatrix}
+x_{12}(t) \\
+x_{22}(t)
+\end{pmatrix}$$ are solutions on some interval, $I$. Then $\vec{x_1}$ and $\vec{x_2}$ are linearly independent if and only if 
+$$W[x_1, x_2](t) = \begin{vmatrix}
+x_{11}(t) & x_{12}(t) \\
+x_{21}(t) & x_{22}(t)
+\end{vmatrix} \neq 0 \quad \text{  for all $t$ in $I$}$$
+\subsubsection{The Eigenvalue Method for Solving $\vec{x}' = A\vec{x}$ }
+We will consider a system that will usually be written as
+$$\frac{d\vec{x}}{dt} = A\vec{x}$$ where the elements of matrix $A$ are real and the elements of vector $\vec{x}$ are to be determined. \\ \\
+We know that $$A\vec{v} = \lambda \vec{v} \quad \quad \text{and} \quad \quad (A-\lambda I)\vec{v} = 0$$ and that finding the eigenvalues and eigenvectors of this equation will yield our solution $$ \vec{x} = e^{\lambda t} \vec{v}$$
+The eigenvalues $\lambda_1$ and $\lambda_2$ are found by solving the characteristic equation
+$$ det(A - \lambda I) = 
+\begin{vmatrix}
+a_{11} - \lambda & a_{12} \\
+a_{21} & a_{22} - \lambda
+\end{vmatrix} = (a_{11} - \lambda)(a_{22} - \lambda) - (a_{12})(a_{21})$$
+After finding each eigenvalue, they can be used to find the corresponding eigenvectors $\vec{v_1}$ and $\vec{v_2}$. Assuming the eigenvalues, $\lambda_1$ and $\lambda_2$ are real and different, the two solutions can be written as 
+$$\vec{x_1}(t) = e^{\lambda_1 t}\vec{v_1} \quad \quad \text{and} \quad \quad \vec{x_2}(t) = e^{\lambda_2 t}\vec{v_2}$$ Since the Wronskian of vectors $\vec{v_1}$ and $\vec{v_2}$ is non-zero, the general solution is
+$$ \vec{x}(t) = Ce^{\lambda_1 t}\vec{v_1} + De^{\lambda_2 t}\vec{v_2}$$
+\subsection{Complex Eigenvalues}
+Let's consider again the system $\vec{x'} = A\vec{x}$. The eigenvalues of this system are the solution to $\det{(A-\lambda I)} = \vec{0}$ which is the solution to $(A-\lambda I)\vec{v} = \vec{0}$. Since $A$ is real valued, any complex eigenvalues must occur in conjugate pairs \textit{(i.e. if $\lambda_1 = \mu + iv$ is an eigenvalue, then so is $\lambda_2 = \mu - iv$)}.
+\\ \\ Considering this case, if $v_1$ is the corresponding eigenvector to $\lambda_1$, then it will satisfy
+$$ (A-\lambda_1 I)\vec{v_1} = \vec{0}$$ Similarly, by taking the conjugate, $$ (A-\bar{\lambda_1} I)\bar{\vec{v_1}} = \vec{0}$$
+Using these two eigenvectors, we determine the solution to the system as 
+$$ x_1(t)= e^{(\mu +iv)t}\vec{v_1} \quad \quad \text{and} \quad \quad x_2(t)= e^{(\mu -iv)t}\bar{\vec{v_1}}$$
+Using Euler's identity, we can then separate these equations into their real and imaginary parts
+$$e^{ivt} = \cos{vt} + i\sin{vt}$$
+Let's set $\vec{v_1} = a + ib$. We now have
+$$\vec{x_1}(t) = (a+ib)e^{\mu t}(\cos{vt} + i\sin{vt})$$
+Now by separating the parts, we obtain
+$$u(t) = e^{\mu t}(a\cos{vt} - b\sin{vt}) \quad \quad \text{and} \quad \quad w(t) = e^{\mu t}(a\cos{vt} + b\sin{vt})$$
+We see that $$\vec{x}_2(t) = u(t) - iw(t)$$ meaning that $\vec{x_1}(t)$ and $\vec{x_2}(t)$ are complex conjugates of each other. \\ \\ \underline{The following is the procedure for finding a solution when $A$ has complex eigenvalues:}
+\begin{enumerate}
+\item Identify the complex conjugate eigenvalues $\lambda = \mu \pm iv$ 
+\item Determine the eigenvector corresponding to $\lambda_1 = \mu + iv$
+\item Express the eigenvector $\vec{v}$ in the form $\vec{v} = a+ib$
+\item Write the general solution by separating into real and imaginary parts $$\vec{x_1}(t) = u(t) + w(t) = e^{\mu t}(a\cos{vt} - b\sin{vt})+ ie^{\mu t}(a\cos{vt} + b\sin{vt})$$
+\item The general solution is then $$\vec{x_1}(t) = Cu(t) + Dw(t)$$
+
+\end{enumerate}
+\subsection{Repeated Eigenvalues}
+We continue to look at the system $\vec{x'} = A\vec{x}$ 
+
+\end{document}
