@@ -1,0 +1,300 @@
+\documentclass[11pt]{article}
+\usepackage{fullpage}
+\usepackage{amsmath}
+\usepackage{graphicx}
+\linespread{1.1}
+
+
+\begin{document}
+
+\title{AER210 \\ Vector Calculus and Fluid Mechanics}
+\author{Michael Boyadjian}
+\maketitle
+\pagebreak
+
+\tableofcontents
+
+\pagebreak
+\part{Vector Calculus}
+\section{Review of Multivariable Calculus}
+\subsection{Vectors and Vector-Valued Functions}
+\begin{itemize}
+\item A vector is a quantity that has magnitude and direction
+\item Vectors having the same length and direction are equivalent
+\item \underline{Position Vector} - Initial point of the vector at the origin of the coordinate system
+\end{itemize}
+
+\subsection{Dot Product}
+\begin{itemize}
+\item $ \vec{a} \cdot \vec{b} \rightarrow$ scalar product
+\end{itemize}
+$$ \vec{a} \cdot \vec{b} = a_1b_1 + a_2b_2 + a_3b_3 \quad \quad (algebraic)$$
+$$ \vec{a} \cdot \vec{b} = |a||b|cos\theta \quad \quad (geometric)$$
+
+\subsection{Cross Product}
+\begin{itemize}
+\item $\vec{a} \times \vec{b} $ $\rightarrow$ another vector
+\item $\vec{c}$ $=$ $\vec{a} \times \vec{b}$ is perpendicular to the plane containing $\vec{a}$ and $\vec{b}$
+\end{itemize}
+$$
+\vec{a}\times \vec{b} = 
+\begin{bmatrix}
+i&j&k \\
+a_1&a_2&a_3 \\
+b_1&b_2&b_3 \\
+\end{bmatrix}
+\quad \quad
+(algebraic)
+$$
+\smallskip
+$$
+|\vec{c}| = |\vec{a}\times \vec{b}| = |\vec{a}||\vec{b}|sin\theta \quad \quad (geometric)
+$$
+\begin{itemize}
+\item $|\vec{c}|$ is the area of a parallelogram formed by $\vec{a}$ and $\vec{b}$
+\end{itemize}
+\subsection{Triple Scalar Product}
+$$
+\vec{a} \cdot (\vec{b} \times \vec{c}) = 
+\begin{bmatrix}
+a_1&a_2&a_3 \\
+b_1&b_2&b_3 \\
+c_1&c_2&c_3 \\
+\end{bmatrix}
+$$
+\begin{itemize}
+\item \underline{Volume of Parallelpiped} = $ |\vec{a}||\vec{b} \times \vec{c}|cos\theta = |\vec{a} \cdot (\vec{b} \times \vec{c})|$
+\end{itemize}
+\subsection{Vector Functions}
+A vector function is a function hose input is a scalar (such as time) and output is a vector.
+$$
+r(t) = f(t)\vec{i} + g(t)\vec{j} + h(t)\vec{k}
+$$
+\subsubsection{Derivatives of Vector Functions}
+\smallskip
+$$
+\frac{d\vec{r}(t)}{dt} = \vec{r}'(t) = \lim_{n\to0} \frac{\vec{r}(t+h)-\vec{r}(t)}{h} = f'(t)\vec{i} + g'(t)\vec{j} + h'(t)\vec{k}
+$$
+\\
+At $h=0$, the vector $\frac{\vec{r}(t+h)-\vec{r}(t)}{h}$ approaches a vector that is tangent to the curve at point P.
+\subsubsection{Unit Tangent Vector}
+$$\vec{T}(\theta) = \frac{\vec{r}'(t)}{|\vec{r}'(t)|}$$
+\subsubsection{Arc Length}
+$$ S = \int_{a}^{b} |\vec{r}'(t)|dt = \int_{a}^{b} \sqrt{(x'(t))^2 + (y'(t))^2 + (z'(t))^2} dt
+$$
+\subsubsection{Partial Derivatives}
+For functions of multiple variables, select the variable to differentiate with respect to, and treat all others as constants.
+$$
+f(x, b) = g(x) \quad \rightarrow \quad f_x(x, b) = g'(x)
+$$
+\medskip
+\underline{example:} \\
+Set $ f(x, y) = 3x^4y^2$. Find $f_x(x, y)$ and $f_y(x, y)$.
+$$ f_x(x, y) = 12x^3y^2 \quad \quad f_y(x, y) = 6x^4y$$
+\subsubsection{Higher Order Partial Derivatives}
+$$(f_{x})_x = f_{xx} \quad \quad (f_{y})_y = f_{yy} \quad \quad (f_{x})_y = (f_{y})_x  = f_{xy} = f_{xy}$$
+\subsubsection{Gradient Vector}
+The gradient vector is the rate of change of a function $f(x,y,z)$ composed of its partial derivatives.
+$$ \vec{\nabla}f = f_x\vec{i} + f_y\vec{j} + f_z\vec{k} $$
+\subsubsection{Chain Rule}
+$$ h = f(x,y,z) \quad \rightarrow \quad x=x(t) \quad y = y(t) \quad z = z(t)$$
+$$ \frac{df(\vec{r}(t)}{dt} = \langle\frac{\partial f}{\partial x}, \frac{\partial f}{\partial y}, \frac{\partial f}{\partial z}\rangle \cdot \langle\frac{dx}{dt}, \frac{dy}{dt}, \frac{dz}{dt}\rangle
+$$
+$$ \frac{df(\vec{r}(t)}{dt} = \frac{\partial f}{\partial x}\frac{dx}{dt} + \frac{\partial f}{\partial y} \frac{dy}{dt} + \frac{\partial f}{\partial z}\frac{dz}{dt}
+$$
+
+\subsubsection{Tangent Planes}
+$$ z - f(a,b) = f_x(a,b)(x-a) + f_y(a,b)(y-b)$$
+
+\subsubsection{Linearization}
+If $\Delta x  \rightarrow 0 \text{, } \Delta y \rightarrow 0 \text{, then } \Delta z \approx dz:$
+$$ \Delta z = f_x(a,b)\Delta x + f_y(a,b)\Delta y$$
+
+\pagebreak
+
+\section{Multiple Integrals}
+
+\subsection{Double Integrals Over Rectangles}
+
+We can define a region, $R$, over which the integration will take place:
+$$R = [a, b] \times [c,d] = \left \lbrace(x,y) \text{ } \epsilon \text{ } R^2 \text{ } |\text{ }  a\leq x \leq b \text{ , } c \leq y \leq d\right \rbrace $$
+The \textbf{double integral} of $f$ over the rectangle $R$ is thus
+$$\iint\limits_{R} f(x,y)dA = \lim_{\infty \text{, } a \to 0} \sum_{i=1}^{n} \sum_{j=1}^{n} f(x_{ij}, y_{ij}) \Delta A$$
+If $f(x,y) \geq 0$, then the double integral could be interpreted as the volume in the defined region:
+$$ V = \iint\limits_{R} f(x,y)dA$$
+An iterated integral is defined as 
+$$\int\limits_{a}^{b} \int\limits_{c}^{d} f(x,y)dydx = \int\limits_{a}^{b}\left[ \int\limits_{c}^{d} f(x,y)dy\right]dx$$
+To evaluate the above, solve the inner integral with respect to $y$ treating $x$ as a constant. Then, solve the outer integral with respect to $x$ treating $y$ as a constant.
+\\
+\\
+\textbf{Fubini's Theorem:} States if $f$ is continuous on region $R$, then 
+$$\iint\limits_{R} f(x,y)dA = \int\limits_{a}^{b} \int\limits_{c}^{d} f(x,y)dydx = \int\limits_{c}^{d} \int\limits_{a}^{b} f(x,y)dxdy$$
+If $f(x,y)$ can be expressed as $g(x)h(y)$, then we can express its integration as 
+$$\iint\limits_{R} f(x,y)dA = \int\limits_{a}^{b} \int\limits_{c}^{d} g(x)h(y)dydx = \int\limits_{a}^{b} g(x)dx \int\limits_{c}^{d} h(y)dy$$
+
+
+\subsection{Double Integrals Over General Regions}
+Double integrals do not always cover rectangular regions. They often cover general regions bounded by several functions.
+\\ \\
+If $f$ is integrable over $R$, then we define the double integral of $f$ over $D$ by 
+$$\iint\limits_D f(x,y)dA = \iint\limits_{R} F(x,y)dA =$$
+In the case that $f(x,y) \geq 0$, we can still interpret $\iint\limits_D f(x,y)dA$ as the volume of the solid that lies above $D$ and under the surface $z = f(x,y)$.
+\\ \\
+Similarly to rectangular regions, we can evaluate iterated integrals with functions as parameters. \\ \\ If $f$ is a continuous function such that $D = \left\lbrace (x,y)\text{ } | \text{ } a \leq x \leq b \text{, } g_1(x) \leq y \leq g_2(x) \right\rbrace$ (\textbf{Type I}), then
+$$\iint\limits_{D} f(x,y)dA = \int\limits_{b}^{a} \int\limits_{g_1(x)}^{g_2(x)} f(x,y)dy dx$$
+If $f$ is a continuous function such that $D = \left\lbrace (x,y)\text { } | \text{ } c \leq y \leq d \text{, } h_1(y) \leq x \leq h_2(y) \right\rbrace$ (\textbf{Type II}), then
+$$\iint\limits_{D} f(x,y)dA = \int\limits_{d}^{c} \int\limits_{h_1(y)}^{h_2(y)} f(x,y)dx dy$$
+If regions do not overlap, they can also be summed:
+$$\iint\limits_{D} f(x,y)dA  = \iint\limits_{D_1} f(x,y)dA + \iint\limits_{D_2} f(x,y)dA $$
+Finally, if we integrate the constant function $f(x,y) = 1$, we'll simply get the area of $D$. 
+$$\iint\limits_{D} 1dA  = A(D)$$
+
+\subsection{Double Integrals in Polar Coordinates}
+Recall that polar coordinates $(r, \theta)$ relate to rectangular coordinates $(x,y)$ with the following equations:
+$$r^2 = x^2 + y^2 \quad \quad \quad x = r\cos\theta \quad \quad \quad y = r\sin\theta$$
+We can define the region $R = \left\lbrace (r,\theta)\text{ }  | \text{ } a \leq r \leq b \text{, } \alpha \leq \theta \leq \beta \right\rbrace$. If $f$ is continuous on a polar rectangle defined by this region $R$, where $ 0 \leq \beta - \alpha \leq 2\pi $, then $$\iint\limits_{R} f(x,y)dA = \int\limits_{\alpha}^{\beta} \int\limits_{a}^{b} f(r\cos\theta,r\sin\theta)\cdot rdrd\theta$$
+\subsection{Applications of Double Integrals}
+\subsubsection{Density and Mass}
+Consider a lamina with variable density $\rho(x,y) = \lim\frac{\Delta m}{\Delta A}$. We can obtain its total mass as the limiting value of its Riemann approximation:
+$$ m = \lim_{k,l \to \infty} \sum_{i=1}^{l} \sum_{j=1}^{l} \rho (x_{ij}^{\star}, y_{ij}^{\star})\Delta A = \iint\limits_{D} \rho(x,y)dA  $$
+\subsubsection{Moments and Center of Mass}
+Consider a lamina that occupies a region $D$ and has density function $\rho (x,y)$. We can define the moments about the $x-axis$ and moments about the $y-axis$ as follows:
+$$M_x = \iint\limits_{D} y\rho (x,y)dA \quad \quad \quad M_y = \iint\limits_{D} x\rho (x,y)dA$$
+We can then say the coordinates of the centre of mass $(\bar x , \bar y)$ are  
+$$ \bar x = \frac{M_y}{m} = \frac{1}{m}\iint\limits_{D} y\rho (x,y)dA \quad \quad \quad \bar y = \frac{M_x}{m} = \frac{1}{m}\iint\limits_{D} x\rho (x,y)dA$$
+where $m$ is given by $m = \iint\limits_{D} \rho (x,y)dA$
+\subsubsection{Moment of Inertia}
+To find the moment of inertia about an area, the following integrals apply: 
+$$I_x = \iint\limits_{D} y^2\rho (x,y)dA \quad \quad \quad I_y = \iint\limits_{D} x^2\rho (x,y)dA$$
+The moment of inertia about the origin is given as 
+$$ I_0 = \iint\limits_{D} (x^2 + y^2)\rho (x,y)dA$$
+\subsection{Surface Area}
+The area of a surface with equation $z = f(x,y)$, $(x,y) \in D$ where $f_x$ and $f_y$ are continuous , is 
+$$ A(S) = \iint\limits_{D} \sqrt{[f_x(x,y)]^2 + [f_y(x,y)]^2+1} \text{ } dA $$
+We can also use an alternative notation to express the same surface area function:
+$$ A(S) = \iint\limits_{D} \sqrt{\left(\frac{\partial z}{\partial x}\right)^2 + \left(\frac{\partial z}{\partial y}\right)^2+1} \text{ } dA $$
+\subsection{Triple Integrals}
+The same way that single and double integrals were defined for one variable and two variable functions, we can define triple integrals for functions of three variables. \\ \\
+We can consider $f$ which is defined as a rectangular box.
+$$ B = \left\lbrace (x,y,z) \text{ } | \text{ } a \leq\ x \leq b \text{, } c \leq y \leq d \text{, } r \leq z \leq s \text{ }\right\rbrace$$ The triple integral then, of $f$ over box $B$ is 
+$$\iiint\limits_{R} f(x,y,z)\text{ }dA = \lim_{l \text{, } m \text{, } n \to 0} \sum_{i=1}^{l} \sum_{j=1}^{m} \sum_{k=1}^{n} f(x_{ijk}^{\star}, y_{ijk}^{\star}, z_{ijk}^{\star}) \Delta V$$
+\textbf{Fubini's Theorem (For Triple Integrals):} If $f$ is continuous over the rectangular box \\ $B = [a,b] \times [c,d] \times [r,s]$, then 
+$$\iiint\limits_{R} f(x,y,z)\text{ }dV = \int\limits_{r}^{s} \int\limits_{c}^{d} \int\limits_{a}^{b} f(x,y,z)\text{ }dx\text{ }dy\text{ }dz $$
+The same rules for double integrals can also be applied to triple integrals
+\subsubsection{Triple Integrals in Cylindrical Coordinates}
+We can convert to cylindrical coordinates $(r, \theta,z)$ from rectangular coordinates $(x,y,z)$ with the following equations:
+$$r^2 = x^2 + y^2 \quad \quad \quad x = rcos\theta \quad \quad \quad y = rsin\theta \quad \quad \quad z=z$$
+The formula for triple integrals in cylindrical coordinates then is:
+$$\iiint\limits_{R} f(x,y,z)\text{ }dV = \int\limits_{\alpha}^{\beta} \int\limits_{h_1(\theta)}^{h_2(\theta)} \int\limits_{u_1(r\cos \theta, r\sin \theta)}^{u_2(r\cos \theta, r\sin \theta)} f(r\cos \theta,r \sin \theta,z)\cdot r \text{ }dz\text{ }dr\text{ }d\theta $$
+To solve for center of mass questions, apply the following formulas: $$ m =\iiint\limits_{E} \rho(x,y,z)\text{ }dV \quad \quad \quad (\bar{x}, \bar{y}, \bar{z}) = \frac{1}{V}(M_{yz}, M_{xz}, M_{xy})$$
+\subsubsection{Triple Integrals in Spherical Coordinates}
+The spherical coordinates  $(\rho, \theta, \phi)$ of a point P in space is where $ \rho =|OP|$ is the distance from the origin to $P$, $\theta$ is the same angle as in cylindrical coordinates, and $\phi$ is the angle between the positive z-axis and the line segment $OP$.
+$$ \rho \geq 0 \quad \quad \quad 0 \leq \phi \leq \pi$$ 
+We can convert from rectangular to spherical coordinates with the following equations
+$$\rho^2 = x^2 + y^2 + z^2 \quad \quad \quad x = \rho\sin\phi \cos \theta \quad \quad \quad y = \rho \sin \phi\sin\theta \quad \quad \quad z=\rho \cos \theta$$
+The formula for triple integrals in cylindrical coordinates then is:
+$$\iiint\limits_{R} f(x,y,z)\text{ }dV = \int\limits_{c}^{d} \int\limits_{\alpha}^{\beta} \int\limits_{a}^{b} f(\rho\sin\phi \cos \theta,\rho \sin\phi \sin \theta,\rho\cos\phi)\cdot \rho^2 \sin \phi \text{ }d\rho \text{ }d\theta \text{ }d\phi $$
+
+\subsection{Change of Variables in Multiple Integrals}
+Changing integration variables in multiple integrals is a bit of different then it is in single integrals. We consider the change of variables as a transformation from the (u,v)-plane to the (x,y)-plane:
+$$ T(u,v) = (x,y)$$ where $x$ and $y$ are related by the equations
+$$ x = g(u,v) \quad \quad \quad y=h(u,v)$$
+We can define the Jacobian of the transformation given by the above equations as 
+$$\begin{vmatrix}
+\frac{\partial(x,y)}{\partial(u,v)}
+\end{vmatrix} = \begin{vmatrix}
+\frac{\partial x}{\partial v} & \frac{\partial x}{\partial u} \\
+\frac{\partial y}{\partial u} & \frac{\partial y}{\partial v}
+\end{vmatrix} = \frac{\partial x}{\partial u} \frac{\partial y}{\partial v} - \frac{\partial y}{\partial u} \frac{\partial x}{\partial v}
+$$
+With this definition, the formula for the change of variables in double integrals then is 
+$$\iint\limits_{R} f(x,y)\text{ }dA = \iint\limits_{S} f(x(u,v),y(u,v))\begin{vmatrix}
+\frac{\partial(x,y)}{\partial(u,v)}
+\end{vmatrix}\text{ }du \text{ } dv$$
+Similarly in triple integrals, the Jacobian and change of variables are the following
+$$\begin{vmatrix}
+\frac{\partial(x,y,z)}{\partial(u,v,z)}
+\end{vmatrix} = \begin{vmatrix}
+\frac{\partial x}{\partial u} & \frac{\partial x}{\partial v} & \frac{\partial x}{\partial w}  \\
+\frac{\partial y}{\partial u} & \frac{\partial y}{\partial v}  & \frac{\partial y}{\partial w}  \\
+\frac{\partial z}{\partial u} & \frac{\partial z}{\partial v} & \frac{\partial z}{\partial w} 
+\end{vmatrix}
+$$
+$$\iint\limits_{R} f(x,y,z)\text{ }dA = \iint\limits_{S} f(x(u,v,w),y(u,v,w), z(x,y,z))\begin{vmatrix}
+\frac{\partial(x,y,z)}{\partial(u,v,w)}
+\end{vmatrix}\text{ }du \text{ } dv \text{ } dw$$
+
+\pagebreak
+
+\section{Vector Calculus}
+\subsection{Line Integrals}
+Line integrals are very similar to single integrals, except instead of integrating over an interval $[a,b]$, we integrate over a curve $C$. To evaluate a line integral, we can use the following formula: 
+$$\int\limits_{C} f(x,y)\text{ }dA = \int\limits_{a}^{b} f(x(t),y(t)) \sqrt{\left(\frac{dx}{dt}\right)^2 + \left(\frac{dy}{dt}\right)^2}\text{ } dt$$
+This is called the line integral with respect to arc length. We can also evaluate a line integral with respect to $x$ and $y$ using the following formulas:
+$$\int\limits_{C} f(x,y)\text{ }dx = \int\limits_{a}^{b} f(x(t),y(t))\text{ } x'(t) \text{ } dt \quad \quad \quad \int\limits_{C} f(x,y)\text{ }dy = \int\limits_{a}^{b} f(x(t),y(t)) \text{ }y'(t) \text{ } dt$$
+We can also parametrize a line segment which begins at $\vec{r_0}$ and ends at $\vec{r_1}$ using a vector representation:
+$$ \vec{r}(t) = (1-t)\vec{r_0} + t\vec{r_1}$$
+This helps to reduce the parameters of the integral to one variable $t$.
+\\ \\
+Line integral apply in vector fields in important equations such as that for work. If $F$ is a continuous vector field on a smooth curve C given by vector function $\vec{r}(t)$, $a\leq t \leq b$, then the line integral of $F$ along $C$ is 
+$$\int\limits_{C} F \cdot dr = \int\limits_{a}^{b} F(\vec{r}(t))\cdot r'(t) \text{ } dt = \int\limits_{C} F \cdot T \text{ }ds$$
+\subsection{Fundamental Theorem for Line Integrals}
+\textbf{Theorem:} Let $C$ be a smooth curve given by the vector function $\vec{r}(t)$, $a \leq t \leq b$. Let $f$ be a differentiable function of two or three variable whose gradient vector $\nabla f$ is continuous on $C$. Then
+$$\int\limits_{C} \nabla f \cdot dr = f(\vec{r}(b)) - f(\vec{r}(a))$$
+We can say that $\int\limits_{C} \nabla f \cdot dr$ is independent of path in $D$ if and only if $\int\limits_{C} \nabla f \cdot dr = 0$ for every closed path $C$ in D. The line integrals of conservative vector fields are independent of path.
+\\ \\ 
+\textbf{Theorem:} Supposing that $F$ is a vector field that is continuous on an open connected region D. If $\int\limits_{C} \nabla f \cdot dr$ is independent of path on $D$, then $F$ is a conservative vector field on $D$, meaning there exists a function $f$ such that $ \nabla f = F$
+\\ \\
+\textbf{Theorem:} If $F(x,y) = P(x,y)\vec{i} + Q(x,y) \vec{j}$ is a conservative vector field on, where $P$ and $Q$ have continuous first order partial derivatives on a domain $D$, then  throughout $D$:
+$$ \frac{\partial P}{\partial y} = \frac{\partial Q}{\partial x}$$ 
+If the above is true, then $F$ is conservative
+
+\subsection{Green's Theorem}
+\textbf{Theorem:} Let $C$ is a positively oriented, piecewise smooth, simple closed curve  in the plane and let $D$ be the region bounded by $C$. If $P$ and $Q$ have continuous partial derivatives on an open region that contains $D$, then
+$$ \int\limits_{C} P\text{ }dx +Q\text{ }dy = \iint\limits_{D} \left(\frac{\partial Q}{\partial x} - \frac{\partial P}{\partial y}\right) \text{ }dA$$
+\subsection{Curl and Divergence}
+\subsubsection{Curl}
+If $F = P\vec{i} + Q\vec{j}+ R\vec{k}$ is a vector field on $R^3$ and the partial derivatives of $P$, $Q$, and $R$ all exist, then the curl of $F$ is the vector field defined by 
+$$ curl\text{ } F = \left(\frac{\partial R}{\partial y} - \frac{\partial Q}{\partial z}\right) \vec{i} + \left(\frac{\partial P}{\partial z} - \frac{\partial R}{\partial x}\right) \vec{j} + \left(\frac{\partial Q}{\partial x} - \frac{\partial P}{\partial y}\right) \vec{k} = \nabla \times F$$
+\textbf{Theorem:} If $F$ is a function that has continuous second-order partial derivatives, then
+$$ curl(\nabla F) = 0$$
+This also tells us that if $F$ is a conservative vector field, the $curl \text{ } F = 0$
+\\ \\
+\textbf{Theorem:} If $F$ is a vector field defined on all of $R^3$, whose component functions all have continuous partial derivatives and $curl \text{ } F = 0$, then $F$ is conservative.
+\subsubsection{Divergence}
+If $F = P\vec{i} + Q\vec{j}+ R\vec{k}$ is a vector field on $R^3$ and $\frac{\partial P}{\partial x}$, $\frac{\partial Q}{\partial y}$, and $\frac{\partial R}{\partial z}$ all exist then the divergence of $F$ is the function of three variables defined by:
+$$ div \text{ } F = \frac{\partial P}{\partial x}\vec{i} +\frac{\partial Q}{\partial y}\vec{j} + \frac{\partial R}{\partial z}\vec{k} = \nabla \cdot F$$
+If $F$ is a function that has continuous second-order partial derivatives, then
+$$ div \text{ } curl \text { }F  = 0$$
+\subsubsection{Vector Form of Green's Theorem}
+The curl and divergence operators now allow us to write Green's theorem in vector form as follows:
+$$ \oint\limits_{C} F \cdot dr = \iint\limits_{D} (curl \text{ } F) \cdot k \text { } dA \quad \quad \quad  \oint\limits_{C} F \cdot n \text { } ds = \iint\limits_{D} div \text{ } F(x,y) \text { } dA$$
+\subsection{Parametric Surfaces and Their Areas}
+Similar to how we can define parametric functions of one variable $t$, we can describe a surface $r(u,v)$ of two parameters, $u$, and $v$, where
+$$ \vec{r}(u,v) = x(u,v)\vec{i}+y(u,v)\vec{j}+z(u,v)\vec{k}$$
+If a smooth parametric surface $S$ is given by the equation $\vec{r}(u,v) = x(u,v)\vec{i}+y(u,v)\vec{j}+z(u,v)\vec{k}$ and $S$ is covered just once as $(u,v)$ ranges throughout the parameter domain $D$, then the surface area of $S$ is  $$A(S) = \iint\limits_{D} | \vec{r_u} \times \vec{r_v} | \text { } dA$$ where $\vec{r_u}$ and $\vec{r_v}$ are $$\vec{r_u} = \frac{\partial x}{\partial u}\vec{i} +\frac{\partial y}{\partial u}\vec{j} + \frac{\partial z}{\partial u}\vec{k} \quad \quad \quad \vec{r_v} = \frac{\partial x}{\partial v}\vec{i} +\frac{\partial y}{\partial v}\vec{j} + \frac{\partial z}{\partial v}\vec{k}$$
+\subsection{Surface Integrals}
+Using the parametrized function $\vec{r}(u,v)$ from before, if the components are all non-zero and non-parallel, then the surface integral is 
+$$ \iint\limits_{S} f(x,y,z) \text{ } dS = \iint\limits_{D} f(\vec{r}(u,v)) \text { }| \vec{r_u} \times \vec{r_v} | \text { } dA$$
+If $F$ is continuous vector field defined by a unit normal vector $\vec{n}$, then the surface integral of $F$ over $S$ is $$ \iint\limits_{S} F \cdot ds =  \iint\limits_{S} F \cdot \vec{n} \text { } ds$$ where $\vec{n}$ is $$\frac{\vec{r_u} \times \vec{r_v}}{|\vec{r_u} \times \vec{r_v}|} $$
+This is also known as the \textbf{flux} of $F$ along $S$.
+\subsection{Stoke's Theorem}
+Stoke's Theorem can be considered a higher order version of Green's Theorem, where it relates a surface integral over a region $S$ to a line integral around the boundary of $S$.
+\\ \\ 
+\textbf{Theorem:} Let $S$ be an oriented piecewise-smooth surface that is bounded by a simple, closed, piecewise boundary curve $C$ with positive orientation. Let $F$ be a vector field whose components have continuous partial derivatives on an open region in $R^3$ that contains $S$. Then $$\int\limits_{C} F \cdot dr = \iint\limits_{S} curl \text{ } F \cdot dS = \iint\limits_{S} curl \text{ } F \cdot k \text{ } dA$$
+\pagebreak
+
+\part{Fluid Mechanics}
+\section{Dimensional Analysis}
+\subsection{Primary and Secondary Dimensions}
+\subsection{Buckingham Pi Theorem}
+\section{Introduction To Fluid Mechanics}
+\subsection{Fluids}
+\subsection{Statistical vs Continuum Approach}
+\subsection{Forces}
+\subsection{Viscosity}
+\subsection{Compressibility}
+\section{Hydrostatics}
+
+\end{document}
+
