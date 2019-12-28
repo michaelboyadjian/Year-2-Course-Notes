@@ -1,6 +1,8 @@
 \documentclass[11pt]{article}
 \usepackage{fullpage}
 \usepackage{amsmath}
+\usepackage{esint}
+\usepackage{cancel}
 \usepackage{graphicx}
 \linespread{1.1}
 
@@ -15,7 +17,13 @@
 \tableofcontents
 
 \pagebreak
+
+\bigskip
+\bigskip
+\bigskip
 \part{Vector Calculus}
+\pagebreak
+
 \section{Review of Multivariable Calculus}
 \subsection{Vectors and Vector-Valued Functions}
 \begin{itemize}
@@ -284,17 +292,318 @@ Stoke's Theorem can be considered a higher order version of Green's Theorem, whe
 \textbf{Theorem:} Let $S$ be an oriented piecewise-smooth surface that is bounded by a simple, closed, piecewise boundary curve $C$ with positive orientation. Let $F$ be a vector field whose components have continuous partial derivatives on an open region in $R^3$ that contains $S$. Then $$\int\limits_{C} F \cdot dr = \iint\limits_{S} curl \text{ } F \cdot dS = \iint\limits_{S} curl \text{ } F \cdot k \text{ } dA$$
 \pagebreak
 
+
+
+\bigskip
+\bigskip
+\bigskip
+\bigskip
+\bigskip
+\bigskip
 \part{Fluid Mechanics}
+\pagebreak
 \section{Dimensional Analysis}
 \subsection{Primary and Secondary Dimensions}
+A dimension is a qualitative description of a physical quantity, which can either be \textbf{primary} or \textbf{secondary}. \\ \\ 
+Primary dimensions are those that are not formed from a combination of other dimensions. In fluid mechanics, these are usually either $[Mass] = M$, $[Length] = L$, $[Time] = T$ or $[Force] = F$, $[Length] = L$, $[Time] = T$. \\ \\
+Secondary dimensions are those that are derived from combining primary dimensions 
 \subsection{Buckingham Pi Theorem}
+If an equation involving $k$ variable is dimensionally homogeneous, i can be reduced to a relationship among $k-r$ independent dimensionless products ($\pi$ terms) where $r$ is the minimum number of reference dimensions required to describe the variables involved in the problem.
+$$ \text{(Number of } \pi \text{ Terms)} = \text{(Number of Variables)} - \text{(Minimum Number of Reference Dimensions)} $$
+To apply the Buckingham $\pi$ theorem, use the following steps:
+\begin{enumerate}
+\item List all of the variables that are involved in the problem
+\item Express each variable in terms of primary dimensions
+\item Determine the required number of $\pi$ terms using the Buckingham $\pi$ theorem
+\item Choose some repeating variables, such that the number of repeating variables is equal to the number of reference dimensions
+\item Form a $\pi$ term by multiplying one of the non-repeating variable by the product of the repeating variables, each raised to an exponent that will make the combination dimensionless. Do this for each non-repeating variable.
+\item Check that all $\pi$ terms are dimensionless
+\item Express a relationship among the $\pi$ terms
+\end{enumerate}
+\pagebreak
 \section{Introduction To Fluid Mechanics}
 \subsection{Fluids}
+A \textbf{fluid} is a substance that deforms continuously under the application of shear (tangential) force, no matter how small that force may be. A substance in liquid or gas phase is called a fluid
 \subsection{Statistical vs Continuum Approach}
+When studying how fluids behave, we can either explicitly account for their molecular nature, referred to as the statistical approach, or instead treat them as being continuous, referred to as the continuum approach.
+\subsubsection{Statistical Approach}
+We treat the fluid as a collection of molecules and the macroscopic behaviour of the fluid is determined through probability and statistics. This is not a very practical approach for modelling the behaviour of fluids in typical engineering applications.
+\subsubsection{Continuum Approach}
+This approach ignores individual molecules and instead treats the fluid as being continuously distributed with no holes in space. This is valid as far as the system is large relative to the space between molecules. This assumptions may not always be valid however.
+\\ \\ 
+The Knudsen number ($Kn$), is a dimensionless parameter that indicates when the continuum assumption is valid.
+$$ Kn = \frac{\text{Microscopic Length Scale}}{\text{Macroscopic Length Scale}} << 1 \quad  \rightarrow \quad \text{Continuum Assumption Valid}$$
 \subsection{Forces}
+Fluids can have two types of force acting on them - \textbf{(1) Body Forces} and \textbf{(2) Surface Forces}
+\subsubsection{Body Forces}
+Body forces are those that develop within a fluid \underline{without} physical contact. This includes forces from gravitational and magnetic fields.
+\subsubsection{Surface Forces}
+Surface forces are those that are generated at the surface of a fluid element by contact with other particles or a solid surface. This can be divided into two components - \textbf{(1) normal to the area [$F_n$]} and \textbf{(2) tangent to the area [$F_t$]} Stresses come from surface forces.
+\\ \\
+Stress is the force per unit area obtained by dividing the surface force by the area upon which it acts. The normal stress and shear stress are shown in the following equations:
+$$ \sigma = \lim_{\delta A \to 0} \frac{\delta F_n}{\delta A} \quad \quad \quad \tau = \lim_{\delta A \to 0} \frac{\delta F_t}{\delta A}$$
 \subsection{Viscosity}
+Viscosity is the property representing internal friction within a fluid. In fluids, it is found that the rate of deformation is directly proportional to the shear stress and the proportionality constant is the viscosity.
+$$ \tau = \mu\left(\frac{d\alpha}{dt}\right) $$
+Fluids where the deformation rate is linearly proportional to the shear stress are called Newtonian fluids.
+\begin{itemize}
+\item \textit{Newtonian Fluids:} Water, Air, Gasoline, Oils
+\item \textit{Non-Newtonian Fluids:} Blood, Plastic
+\end{itemize}
+The angular deformation of the element is equal to the velocity gradient giving the following relationship:
+$$ \tau = \mu\left(\frac{d\alpha}{dt}\right) = \mu\left(\frac{du}{dt}\right) $$
+
 \subsection{Compressibility}
+Compressibility is classified by a property called \textbf{bulk modulus} ($E_V$)
+$$ E_V = -\frac{dp}{dV/V} = \frac{\text{Differential Change in Pressure}}{\text{Fractional Change in Volume}}$$
+This can also be written in terms of density rather than volume:
+$$ E_V = -\frac{dp}{d\rho/\rho} = \frac{\text{Differential Change in Pressure}}{\text{Fractional Change in Density}}$$
+\pagebreak
+
 \section{Hydrostatics}
+Hydrostatics considers fluids at rest or fluids moving such that there is no relative motion between adjacent particles. A fluid at rest or in rigid-body motion thus experiences zero shear stress. Since this is the case, the only surface forces present can develop from pressure. 
 
+\subsection{Pressure}
+Pressure results from molecules colliding against a surface. Every time a particle bounces off a surface, its momentum changes, since velocity changes direction. The force due to pressure always acts in a normal direction to the surface. Pressure is a normal stress and is inward acting normal force per unit area. The force on one side of a small element of surface $dA$ due to pressure is 
+$$ d\vec{F_n} = -P\text{ } dA \cdot \vec{n} $$
+The pressure at a point in a fluid at rest, or in motion, is independent of direction as long as there are no shearing stresses present. This is known as \textbf{Pascal's Law}.
+\subsubsection{Equations for A Pressure Field}
+The resultant surface force acting on an element can be expressed in vector form as 
+$$ \sum \delta F_s = - \left(\frac{\partial P}{\partial x} \vec{i} + \frac{\partial P}{\partial y} \vec{j} + \frac{\partial P}{\partial z} \vec{k}\right) \text{ }\delta x \text{ }\delta y \text{ }\delta z $$
+Thus the resultant pressure force per unit volume is 
+$$\frac{\sum \delta F_s}{\text{ }\delta x \text{ }\delta y \text{ }\delta z} = - \vec{\nabla} P$$
+The total body force comes through the weight of the element:
+$$ \sum \delta F_b = - \rho g \text{ }\delta x \text{ }\delta y \text{ }\delta z \text{ } \vec{k} $$
+And the total body force per unit volume is
+$$\frac{\sum \delta F_b}{\text{ }\delta x \text{ }\delta y \text{ }\delta z} = - \rho g \text{ } \vec{k} $$
+From these equations, we can derive the general equation of motion for a fluid with no shearing stresses:
+$$ - \vec{\nabla} P - \rho g \vec{k} = \rho \vec{a} $$
+\subsubsection{Fluids at Rest}
+For a fluid at rest ($\vec{a}=0$) we have that 
+$$ \vec{\nabla} P = - \rho g \vec{k}$$
+This shows us that the pressure does not depend on $x$ or $y$ and is constant to the direction of gravity. Therefore,
+$$ \frac{\partial P}{\partial z} = -\rho g = \gamma $$
+A fluid with a constant density is considered an \textbf{incompressible} fluid. Through integration, we obtain
+$$ P_1 - P_2 = \rho g (z_2 - z_1) = \rho g h$$
+which tells us that in an incompressible fluid at rest, the pressure increases linearly with depth in a gravity field and does not change in the horizontal direction.
+\\ \\
+On the other hand, we consider gases such as oxygen, nitrogen, and air as \textbf{compressible} fluids since the density can change with pressure and temperature changes. By applying the ideal gas law in isothermal conditions, we get that
+$$ P_2 = P_1 \exp{\left(-\frac{g(z_2 - z_1)}{RT_o}\right)}$$
+\subsubsection{Measurement of Pressure}
+Pressure values must be stated with respect to a reference level. The pressure is given as either absolute pressure or gauge pressure.
+\begin{itemize}
+\item \textit{Absolute Pressure:} Pressure value measured referencing a perfect vacuum (absolute zero pressure)
+\item \textit{Gauge Pressure:} Pressure value measured relative to the local atmospheric pressure
+\end{itemize}
+To convert between the two, we use the following relationship
+$$ P_{abs} = P_{atm} + P_{gauge}$$
+\subsubsection{Instruments for Measuring Pressure}
+\begin{itemize}
+\item Manometers
+\item Bourdon Pressure Gauge
+\item Transducers
+\end{itemize}
+\subsection{Hydrostatic Forces on Submerged Surfaces}
+When a surface is submerged in a fluid, forces develop on the surface due to the fluid. For fluids at rest, the force must be perpendicular to the surface since there are no shearing stresses present. The pressure will also vary linearly with depth if the fluid is incompressible. the differential force on a differential area $dA$ of a submerged surface is 
+$$ d\vec{F_p} = -p\text{ } dA \text{ } \vec{n} = -p \text{ } dA $$
+The total pressure force on an area can be obtained by integrating the differential force over the area
+$$\vec{F_R} = \iint\limits_{A} d\vec{F}$$
+\subsection{Buoyancy}
+Objects feel lighter and weigh less in a liquid than in air. This suggests that a fluid exerts an upward force on a body immersed in it. This is called the buoyant force and is denoted as $F_B$. This is caused by the increase of pressure in a fluid with depth. We conclude that the buoyant force acting on an object is equal to the weight of the liquid displaced by the solid body. 
+$$ F_P = \rho g V \vec{k} $$
+This is known as \textbf{Archimedes's Principle}. Note that the buoyant force acts upward, and it is independent of the density of the solid body
+$$ \frac{V_{sub}}{V_{total}} = \frac{\rho_{body}}{\rho_{fluid}}$$
+\subsubsection{Stability of Immersed and Floating Bodies}
+The stability of a body can be determined by considering what happens when it is displaced from its equilibrium position.
+\begin{itemize}
+\item \textit{Stable Equilibrium:} Any small disturbance generates a restoring force to return to initial equilibrium position
+\item \textit{Neutral Equilibrium:} If equilibrium is disturbed, the body will stay at the new position 
+\item \textit{Unstable Equilibrium:} Any disturbance, even infinitesimal, will prevent the body from returning to equilibrium 
+\end{itemize}
+For completely submerged bodies:
+\begin{itemize}
+\item If the center of gravity is below the center of buoyancy, the object is bottom heavy, and is stable
+\item If the center of gravity is below the center of buoyancy, the object is top-heavy, and is unstable
+\end{itemize}
+
+\section{Flowing Fluids}
+
+\subsection{Fundamentals of Elementary Fluid Dynamics}
+\subsubsection{Velocity and Descriptions of Flow}
+There are two ways to describe fluid motion:
+\begin{itemize}
+\item \textbf{Lagrangian Approach: }Identifies a small mass of fluid in flow and describes the fluid's motion with time. It's position is described by 
+$$ \vec{r}(t) = x(t)\vec{i}+y(t)\vec{j}+z(t)\vec{k}$$  and its corresponding fluid velocity is given by the time derivative
+$$\vec{V}(t) = \frac{d\vec{r}(t)}{dt} = \frac{dx}{dt} \vec{i} + \frac{dy}{dt} \vec{j} + \frac{dz}{dt} \vec{k}$$
+\item \textbf{Eulerian Approach:} Imagine an array of windows in the flow field and have information for the velocity of fluid particles that pass each window for all time. Here, the velocity is a function of space and time $$ \vec{V}=\vec{v}(x,y,z,t) = \vec{v}(\vec{r}, t)$$ Each velocity component is also a function of space and time
+\end{itemize}
+Generally, the Eulerian approach is more favoured because the Eulerian approach is more suited to the analysis of a continuum. In cases, where the continuum approach is invalid, the Langrangian approach is used.
+
+\subsubsection{Flow Visualization}
+\begin{itemize}
+\item \textbf{Streamlines:} A line that is tangent to the local velocity vector at every point along the line at that instant. There will be no flow across a streamline (it is tangent). Its slope is equivalent to the slope of the velocity vector at the same point.
+\begin{itemize}
+\item \textbf{Streamtubes:} Consists of a bundle of individual streamlines. Fluid cannot cross a streamline, so a streamtube acts as a physical tube
+\item \textbf{Stream Filaments:} A streamtube in which the cross-sectional area of the filament is  small enough to have a constant velocity over the cross-sectional area of the filament
+\end{itemize}
+\item \textbf{Pathlines:} The line traced out by a particular particle as it moves from one point to another; the actual path a particle takes
+\item \textbf{Streaklines:} A line that connects all fluid particles that have passed through the same point in space at a previous time
+\end{itemize}
+
+\subsubsection{Flow Distinctions}
+\begin{itemize}
+\item \textbf{Steady and Unsteady Flow}
+\begin{itemize}
+\item \textbf{Steady Flow:} All fluid flow properties (velocity, temperature, pressure, density, etc.) are time independent, but they can be a function of space. In this case, the streamline, streakline, and pathline can all be different
+\item \textbf{Unsteady Flow:} Any of the flow properties are time-dependent. In this case, the streamline, streakline, and pathline are identical
+\end{itemize}
+\item \textbf{Dimensionality of a Flow Field:} A flow field can be one-, two-, or three- dimensional if the flow velocity or any of the flow properties vary in one, two, or three spatial dimensions. The dimensionality depends on the choice of coordinate system and orientation.
+\item \textbf{Viscous and Inviscid Regions of Flow} 
+\begin{itemize}
+\item \textbf{Viscous Flow Regions:} Regions in which the frictional effects are significant (close to solid surfaces)
+\item \textbf{Inviscid Flow Regions:} Regions where  viscous forces are negligibly small compared to inertial or pressure forces (not close to solid surfaces). Neglecting viscous effects simplifies analysis without loss of accuracy
+\end{itemize}
+\item \textbf{Laminar and Turbulent Force}
+\begin{itemize}
+\item \textbf{Laminar Flow:} Highly ordered fluid motion characterized by smooth layers of fluid
+\item \textbf{Turbulent Flow:} Highly disordered fluid motion that typically occurs at high velocities and is characterized by velocity fluctuations
+\item \textbf{Transitional Flow:} Flow that alternates between being laminar and turbulent
+\end{itemize}
+\end{itemize}
+
+\subsection{Conservation of Mass and Energy}
+The concentration for this section will be the conservation of mass and energy for steady incompressible flow (one-dimensional flow)
+
+\subsubsection{Definitions}
+\begin{itemize}
+\item  \textbf{Volume Flow Rate:} The volume of fluid which passes through a given surface per unit time 
+$$ \dot{V} = \frac{dV}{dt} =  \iint\limits_{A} \vec{V} \text{ } d\vec{A}  = \iint\limits_{A} \vec{V} \text{ } dA \text{ } \vec{n} $$
+If the velocity distribution is uniform over a surface, then
+$$\dot{V} = V_nA = V \cos \theta A$$
+\item \textbf{Mass Flow Rate:} The mass of fluid which passes through a given surface per unit time
+$$ \dot{m} = \iint\limits_{A} \rho \text{ } \vec{V}  \text{ } d\vec{A}  = \iint\limits_{A} \rho \text{ } \vec{V} \text{ } dA \text{ } \vec{n} = \iint \limits_A \rho \text{ } V_n \text{ } dA $$
+If the velocity distribution and density are uniform over the area, then
+$$ \dot{m} = \rho V_n A$$
+\end{itemize}
+
+\subsubsection{Conservation of Mass Along a Streamtube}
+The flow entering and exiting from two cross-sectional areas $A_1$ and $A_2$ is $$ \dot{m_1} = \iint\limits_{A_1} \rho_1 \text{ } \vec{V_1}  \text{ } d\vec{A_1} \quad \quad \quad \dot{m_2} = \iint\limits_{A_2} \rho_2 \text{ } \vec{V_2}  \text{ } d\vec{A_2}$$ In steady and incompressible flow, we have that $\dot{m_1} = \dot{m_2}$, otherwise the difference should result in a change in mass. With this, we can arrive to the conclusion 
+$$ A_1V_1 = A_2V_2$$ With steady flow that is compressible, we still have that $\dot{m_1} = \dot{m_2}$, but in this case 
+$$ \rho_1A_1V_1 = \rho_2A_2V_2$$
+
+\subsubsection{Conservation of Energy}
+In fluids, potential, kinetic, and pressure energies are exchangeable and ignoring frictional losses, the total energy is constant. This is the law of conservation of energy. The \textbf{Bernoulli} equation is an approximate relation between the fluid energies due to pressure, velocity, and elevation, and is valid in regions of steady incompressible flow where frictional forces are negligible along a streamline
+$$ \frac{V^2}{2}+gz+ \frac{P}{\rho} = constant$$
+This tells us that the sum of kinetic, potential, and pressure energies of a fluid particle per unit mass is constant along a streamline during steady flow when the compressibility and frictional effects are negligible
+
+\subsubsection{Static, Dynamic, Total, and Stagnation Pressures}
+By multiplying the Bernoulli equation by $\rho$, each term changes to units of pressure and will then represent some form of pressure.
+$$P + \rho\frac{V^2}{2} + \rho g z =P_T$$
+\begin{itemize}
+\item $P$ is the static pressure representing the actual thermodynamic pressure of the fluid 
+\item $\rho \frac{V^2}{2}$ is the dynamic pressure representing the pressure rise when the fluid motion is brought to a stop isentropically
+\item $\rho g z $ is the hydrostatic pressure which accounts for elevation effects
+\end{itemize}
+
+\subsubsection{Limitations of the Bernoulli Equation}
+It is important to understand the restrictions on the Bernoulli equation's applicability and observe the limitations on its use. The assumptions for its use are as follows:
+\begin{enumerate}
+\item Steady flow
+\item Incompressible flow (if Mach number $<$ 0.3)
+\item Frictionless flow
+\item Flow along a streamline
+\item No shaft work between point 1 and point 2
+\item No heat transfer between 1 and 2
+\end{enumerate}
+
+\subsection{Conservation of Momentum}
+
+\subsubsection{Control Volume Approach vs System Approach}
+\begin{itemize}
+\item \textbf{Control Volume Approach:} A volume in the flow field is identified and the governing equations are solved for the flow properties associated with this volume. This is the Eulerian concept and is used for most fluid flow analysis problems.
+\item \textbf{System Approach:} Involves a continuous collection of mass of a fluid system that moves with the flow and solving equations for this system. This is the Lagrangian concept, where the system moves with the flow and consists of the same particles. This is used in thermodynamics and solid mechanics.
+\end{itemize}
+Some important definitions are explained below:
+\begin{itemize}
+\item \textbf{Control Volume:} A volume in space
+\item \textbf{Control Surface:} The surface enclosing the control volume
+\item \textbf{Fluid System:} A continuous mass of fluid that always contains the same fluid particles.
+\end{itemize}
+
+\subsubsection{Reynolds Transport Theorem}
+Let $B$ represent a fluid parameter proportional with the mass of the fluid considered and $b$ represent the amount of that parameter per unit mass
+$$ B = mb$$ where $m$ is the mass of the fluid of interest. For a fluid system the amount of parameter $B$ can be determined by adding the amount associated with the mass of each particle within the system
+$$ B_{sys} = \int \limits_{sys} b\text{ } \rho \text{ } dV =  \int \limits_{sys} b\text{ } dm$$
+For a control volume, the amount of parameter $B$ contained in the control volume at a given instant 
+$$ B_{CV} = \int \limits_{CV} b\text{ } \rho \text{ } dV =  \int \limits_{CV} b\text{ } dm$$
+We'll often encounter the following two equations 
+\subsubsection{Momentum Principle}
+The most general form of the momentum equation is 
+$$ \sum \vec{F}_{CV} = \frac{d}{dt}\iiint \limits_{CV} \vec{V}(\rho d V) + \oiint \limits_{CS} \vec{V}(\rho \vec{V} d\vec{A})$$
+$ \sum \vec{F}_{CV} $ are body and surface forces that act on what is contained in the control volume. The only body forces considered are the ones associated with the action of gravity. The surface forces are basically exerted on the contents of the control volume by material just outside the control volume in contact with material just inside the control volume. The equation above states that the sum of the body forces and surface forces is the sum of the time rate of change of  momentum due to unsteady fluctuations of flow properties inside the control volume and the net flow rate of momentum across the control surface. \\ \\
+There are a few special cases to consider
+\begin{itemize}
+\item For steady flow:
+$$ \sum \vec{F}_{CV} = \oiint \limits_{CS} \vec{V}(\rho \vec{V} d\vec{A})$$ 
+\item For steady, one-dimensional flow:
+$$ \sum \vec{F}_{CV} = \sum \dot{m}_{out}\vec{V}_{out} - \sum \dot{m}_{in}\vec{V}_{in} $$ 
+if there is only one inlet and one outlet
+$$ \sum \vec{F}_{CV} = \dot{m} (\vec{V}_{out} - \vec{V}_{in})$$
+\end{itemize}
+
+\subsubsection{Interpretation of Momentum Equation}
+
+\pagebreak
+\section{General Forms of the Continuity Equation}
+
+\subsection{Models of the Fluid}
+There have generally been five different models used to study the motion of a fluid:
+\begin{itemize}
+\item \textbf{Finite Control Volume:} The control volume is a reasonably large but finite region of flow fixed in space with the fluid particles moving through it
+\item \textbf{Finite System Approach:} The system moves with the fluid. If the density is changing within the flow field, its volume and shape would change as it moves with the flow
+\item \textbf{Infinitesimal Control Volume:} The control volume is infinitesimal in the same sense as in differential calculus, but is large enough to enable a huge number of fluid molecules to pass through it
+\item \textbf{Infinitesimal System:} The system of fluid is infinitesimal, consists of the same fluid particles and moves with the flow with a velocity equal to the local flow velocity
+\item \textbf{Molecular Approach:} Beyond the scope of this course, but good to know
+\end{itemize}
+
+\subsection{Physical Understanding}
+\subsubsection{Substantial Derivative}
+The substantial derivative is defined as follows:
+$$ \frac{D}{Dt} = \frac{\partial}{\partial t} + u \frac{\partial}{\partial x} +v \frac{\partial}{\partial y} + w \frac{\partial}{\partial z}$$
+\begin{itemize}
+\item $\frac{D}{Dt}$ is the substantial derivative, which is physically, the time rate of change following a moving fluid element
+\item $\frac{\partial}{\partial t}$ is the local derivative, which is physically the time rate of change at a fixed point
+\item $ u \frac{\partial}{\partial x} +v \frac{\partial}{\partial y} + w \frac{\partial}{\partial z}$ is called the convective derivative, which is physically the time rate of change due to the movement of the fluid element from one location to another in the flow field where the flow properties are spatially different
+\end{itemize}
+This is also considered the \textbf{total derivative} with respect to time and can be written in the following form
+$$ \frac{D}{Dt} = \frac{\partial}{\partial t} + (\vec{V}\vec{\nabla})$$
+
+\subsubsection{Gradient of a Scalar Field}
+The gradient of a scalar quantity * is defined as a vector such that
+\begin{enumerate}
+\item Its magnitude is the maximum rate of change of * per unit length of the coordinate space at a given point
+\item Its direction is the direction of the maximum rate of change at p at a given point
+\end{enumerate}
+
+\subsubsection{Divergence of Velocity}
+The divergence of velocity is given by the following:
+$$ \vec{\nabla} \cdot \vec{V} = \frac{\partial u}{\partial x} + \frac{\partial v}{\partial y} + \frac{\partial w}{\partial z} $$
+Physically, this is the time rate of change of the volume of a moving infinitesimally small system per unit volume. 
+
+\subsubsection{Mass Flow Rate and Mass Flux}
+The mass flow rate is given by 
+$$ \dot{m} = \rho V_n A $$
+and the mass flux is defined as the mass flow per unit area
+$$ \text{mass flux} = \frac{\dot{m}}{A} = \rho V_n$$
+
+\subsection{Continuity Equation}
+The integral form of the continuity equation for a finite control volume fixed in space is 
+$$\oiint \limits_S \rho \vec{V} \cdot d\vec{S} + \frac{\partial}{\partial t} \iiint \limits_{\Omega} \rho d\Omega = 0 $$
+The integral form of the continuity equation for a finite system of constant mass moving with the flow is 
+$$\frac{D}{D t} \iiint \limits_{\Omega} \rho d\Omega = 0 $$
+The differential form of the continuity equation for an infinitesimal control volume fixed in space is 
+$$ \frac{\partial \rho}{\partial t} + \vec{\nabla} \cdot (\rho \vec{V}) = 0$$
+The differential form of the continuity equation for an infinitesimal system of constant mass moving with the flow is 
+$$ \frac{D \rho}{Dt} + \rho \vec{\nabla} \cdot \vec{V} = 0$$
+Consult the class notes if interested in the derivation of these equations
 \end{document}
-

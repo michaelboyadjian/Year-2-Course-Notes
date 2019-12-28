@@ -1,3 +1,4 @@
+\contentsline {part}{I\hspace {1em}Thermodynamics}{4}% 
 \contentsline {section}{\numberline {1}Introduction: Brief History of Thermodynamics}{4}% 
 \contentsline {subsection}{\numberline {1.1}First Law of Thermodynamics}{4}% 
 \contentsline {subsection}{\numberline {1.2}Second Law of Thermodynamics}{4}% 
@@ -45,4 +46,4 @@
 \contentsline {subsection}{\numberline {6.3}Control Mass Analysis}{14}% 
 \contentsline {subsection}{\numberline {6.4}Isentropic Efficiency}{15}% 
 \contentsline {section}{\numberline {7}Phase Equilibrium}{16}% 
-\contentsline {section}{\numberline {8}Refrigerators}{16}% 
+\contentsline {section}{\numberline {8}Refrigerators}{17}% 

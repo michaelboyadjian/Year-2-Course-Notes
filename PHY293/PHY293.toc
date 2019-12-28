@@ -1,3 +1,4 @@
+\contentsline {part}{I\hspace {1em}Waves}{3}% 
 \contentsline {section}{\numberline {1}Simple Harmonic Oscillators}{3}% 
 \contentsline {subsection}{\numberline {1.1}Equations of Motion}{3}% 
 \contentsline {subsection}{\numberline {1.2}General Solutions}{3}% 
@@ -13,18 +14,17 @@
 \contentsline {subsection}{\numberline {2.5}Quality Factor (Q)}{5}% 
 \contentsline {section}{\numberline {3}Forced Harmonic Oscillators and Resonance}{7}% 
 \contentsline {subsection}{\numberline {3.1}Forced Undamped Oscillator}{7}% 
-\contentsline {subsection}{\numberline {3.2}Forced Damped Oscillator}{7}% 
-\contentsline {section}{\numberline {4}Coupled Harmonic Oscillators and Eigenmodes}{8}% 
-\contentsline {subsection}{\numberline {4.1}Coupled Pendulums}{8}% 
-\contentsline {subsection}{\numberline {4.2}Beating Phenomenon}{8}% 
-\contentsline {subsection}{\numberline {4.3}General Solution Method}{8}% 
-\contentsline {section}{\numberline {5}Wave Equation and Standing Waves}{9}% 
-\contentsline {subsection}{\numberline {5.1}Wave Equation}{9}% 
-\contentsline {subsection}{\numberline {5.2}Standing Waves}{9}% 
-\contentsline {section}{\numberline {6}Travelling Waves}{10}% 
-\contentsline {subsection}{\numberline {6.1}Superposition of Modes}{10}% 
-\contentsline {subsection}{\numberline {6.2}Solutions to the Wave Equation}{10}% 
-\contentsline {subsection}{\numberline {6.3}Energy}{10}% 
-\contentsline {subsection}{\numberline {6.4}Reflection and Transmission}{10}% 
-\contentsline {subsection}{\numberline {6.5}Higher Dimensions}{10}% 
-\contentsline {section}{\numberline {7}Wave Packets and Dispersion}{11}% 
+\contentsline {subsection}{\numberline {3.2}Forced Damped Oscillator}{8}% 
+\contentsline {subsection}{\numberline {3.3}Varying the Forcing Frequency}{8}% 
+\contentsline {subsection}{\numberline {3.4}Power Absorbed by Damping During Forced Oscillations}{8}% 
+\contentsline {section}{\numberline {4}Coupled Harmonic Oscillators and Eigenmodes}{9}% 
+\contentsline {subsection}{\numberline {4.1}Coupled Pendulums}{9}% 
+\contentsline {subsection}{\numberline {4.2}General Solution Method}{9}% 
+\contentsline {section}{\numberline {5}Wave Equation and Standing Waves}{11}% 
+\contentsline {subsection}{\numberline {5.1}Wave Equation}{11}% 
+\contentsline {subsection}{\numberline {5.2}Standing Waves}{11}% 
+\contentsline {subsection}{\numberline {5.3}Energy}{11}% 
+\contentsline {section}{\numberline {6}Travelling Waves}{12}% 
+\contentsline {subsection}{\numberline {6.1}Solutions to the Wave Equation}{12}% 
+\contentsline {subsection}{\numberline {6.2}Reflection and Transmission}{12}% 
+\contentsline {section}{\numberline {7}Wave Packets and Dispersion}{13}% 

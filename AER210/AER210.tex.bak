@@ -15,7 +15,13 @@
 \tableofcontents
 
 \pagebreak
+
+\bigskip
+\bigskip
+\bigskip
 \part{Vector Calculus}
+\pagebreak
+
 \section{Review of Multivariable Calculus}
 \subsection{Vectors and Vector-Valued Functions}
 \begin{itemize}
@@ -284,17 +290,146 @@ Stoke's Theorem can be considered a higher order version of Green's Theorem, whe
 \textbf{Theorem:} Let $S$ be an oriented piecewise-smooth surface that is bounded by a simple, closed, piecewise boundary curve $C$ with positive orientation. Let $F$ be a vector field whose components have continuous partial derivatives on an open region in $R^3$ that contains $S$. Then $$\int\limits_{C} F \cdot dr = \iint\limits_{S} curl \text{ } F \cdot dS = \iint\limits_{S} curl \text{ } F \cdot k \text{ } dA$$
 \pagebreak
 
+
+
+\bigskip
+\bigskip
+\bigskip
+\bigskip
+\bigskip
+\bigskip
 \part{Fluid Mechanics}
+\pagebreak
 \section{Dimensional Analysis}
 \subsection{Primary and Secondary Dimensions}
+A dimension is a qualitative description of a physical quantity, which can either be \textbf{primary} or \textbf{secondary}. \\ \\ 
+Primary dimensions are those that are not formed from a combination of other dimensions. In fluid mechanics, these are usually either $[Mass] = M$, $[Length] = L$, $[Time] = T$ or $[Force] = F$, $[Length] = L$, $[Time] = T$. \\ \\
+Secondary dimensions are those that are derived from combining primary dimensions 
 \subsection{Buckingham Pi Theorem}
+If an equation involving $k$ variable is dimensionally homogeneous, i can be reduced to a relationship among $k-r$ independent dimensionless products ($\pi$ terms) where $r$ is the minimum number of reference dimensions required to describe the variables involved in the problem.
+$$ \text{(Number of } \pi \text{ Terms)} = \text{(Number of Variables)} - \text{(Minimum Number of Reference Dimensions)} $$
+To apply the Buckingham $\pi$ theorem, use the following steps:
+\begin{enumerate}
+\item List all of the variables that are involved in the problem
+\item Express each variable in terms of primary dimensions
+\item Determine the required number of $\pi$ terms using the Buckingham $\pi$ theorem
+\item Choose some repeating variables, such that the number of repeating variables is equal to the number of reference dimensions
+\item Form a $\pi$ term by multiplying one of the non-repeating variable by the product of the repeating variables, each raised to an exponent that will make the combination dimensionless. Do this for each non-repeating variable.
+\item Check that all $\pi$ terms are dimensionless
+\item Express a relationship among the $\pi$ terms
+\end{enumerate}
+\pagebreak
 \section{Introduction To Fluid Mechanics}
 \subsection{Fluids}
+A \textbf{fluid} is a substance that deforms continuously under the application of shear (tangential) force, no matter how small that force may be. A substance in liquid or gas phase is called a fluid
 \subsection{Statistical vs Continuum Approach}
+When studying how fluids behave, we can either explicitly account for their molecular nature, referred to as the statistical approach, or instead treat them as being continuous, referred to as the continuum approach.
+\subsubsection{Statistical Approach}
+We treat the fluid as a collection of molecules and the macroscopic behaviour of the fluid is determined through probability and statistics. This is not a very practical approach for modelling the behaviour of fluids in typical engineering applications.
+\subsubsection{Continuum Approach}
+This approach ignores individual molecules and instead treats the fluid as being continuously distributed with no holes in space. This is valid as far as the system is large relative to the space between molecules. This assumptions may not always be valid however.
+\\ \\ 
+The Knudsen number ($Kn$), is a dimensionless parameter that indicates when the continuum assumption is valid.
+$$ Kn = \frac{\text{Microscopic Length Scale}}{\text{Macroscopic Length Scale}} << 1 \quad  \rightarrow \quad \text{Continuum Assumption Valid}$$
 \subsection{Forces}
+Fluids can have two types of force acting on them - \textbf{(1) Body Forces} and \textbf{(2) Surface Forces}
+\subsubsection{Body Forces}
+Body forces are those that develop within a fluid \underline{without} physical contact. This includes forces from gravitational and magnetic fields.
+\subsubsection{Surface Forces}
+Surface forces are those that are generated at the surface of a fluid element by contact with other particles or a solid surface. This can be divided into two components - \textbf{(1) normal to the area [$F_n$]} and \textbf{(2) tangent to the area [$F_t$]} Stresses come from surface forces.
+\\ \\
+Stress is the force per unit area obtained by dividing the surface force by the area upon which it acts. The normal stress and shear stress are shown in the following equations:
+$$ \sigma = \lim_{\delta A \to 0} \frac{\delta F_n}{\delta A} \quad \quad \quad \tau = \lim_{\delta A \to 0} \frac{\delta F_t}{\delta A}$$
 \subsection{Viscosity}
+Viscosity is the property representing internal friction within a fluid. In fluids, it is found that the rate of deformation is directly proportional to the shear stress and the proportionality constant is the viscosity.
+$$ \tau = \mu\left(\frac{d\alpha}{dt}\right) $$
+Fluids where the deformation rate is linearly proportional to the shear stress are called Newtonian fluids.
+\begin{itemize}
+\item \textit{Newtonian Fluids:} Water, Air, Gasoline, Oils
+\item \textit{Non-Newtonian Fluids:} Blood, Plastic
+\end{itemize}
+The angular deformation of the element is equal to the velocity gradient giving the following relationship:
+$$ \tau = \mu\left(\frac{d\alpha}{dt}\right) = \mu\left(\frac{du}{dt}\right) $$
+
 \subsection{Compressibility}
+Compressibility is classified by a property called \textbf{bulk modulus} ($E_V$)
+$$ E_V = -\frac{dp}{dV/V} = \frac{\text{Differential Change in Pressure}}{\text{Fractional Change in Volume}}$$
+This can also be written in terms of density rather than volume:
+$$ E_V = -\frac{dp}{d\rho/\rho} = \frac{\text{Differential Change in Pressure}}{\text{Fractional Change in Density}}$$
+\pagebreak
+
 \section{Hydrostatics}
+Hydrostatics considers fluids at rest or fluids moving such that there is no relative motion between adjacent particles. A fluid at rest or in rigid-body motion thus experiences zero shear stress. Since this is the case, the only surface forces present can develop from pressure. 
+
+\subsection{Pressure}
+Pressure results from molecules colliding against a surface. Every time a particle bounces off a surface, its momentum changes, since velocity changes direction. The force due to pressure always acts in a normal direction to the surface. Pressure is a normal stress and is inward acting normal force per unit area. The force on one side of a small element of surface $dA$ due to pressure is 
+$$ d\vec{F_n} = -P\text{ } dA \cdot \vec{n} $$
+The pressure at a point in a fluid at rest, or in motion, is independent of direction as long as there are no shearing stresses present. This is known as \textbf{Pascal's Law}.
+\subsubsection{Equations for A Pressure Field}
+The resultant surface force acting on an element can be expressed in vector form as 
+$$ \sum \delta F_s = - \left(\frac{\partial P}{\partial x} \vec{i} + \frac{\partial P}{\partial y} \vec{j} + \frac{\partial P}{\partial z} \vec{k}\right) \text{ }\delta x \text{ }\delta y \text{ }\delta z $$
+Thus the resultant pressure force per unit volume is 
+$$\frac{\sum \delta F_s}{\text{ }\delta x \text{ }\delta y \text{ }\delta z} = - \vec{\nabla} P$$
+The total body force comes through the weight of the element:
+$$ \sum \delta F_b = - \rho g \text{ }\delta x \text{ }\delta y \text{ }\delta z \text{ } \vec{k} $$
+And the total body force per unit volume is
+$$\frac{\sum \delta F_b}{\text{ }\delta x \text{ }\delta y \text{ }\delta z} = - \rho g \text{ } \vec{k} $$
+From these equations, we can derive the general equation of motion for a fluid with no shearing stresses:
+$$ - \vec{\nabla} P - \rho g \vec{k} = \rho \vec{a} $$
+\subsubsection{Fluids at Rest}
+For a fluid at rest ($\vec{a}=0$) we have that 
+$$ \vec{\nabla} P = - \rho g \vec{k}$$
+This shows us that the pressure does not depend on $x$ or $y$ and is constant to the direction of gravity. Therefore,
+$$ \frac{\partial P}{\partial z} = -\rho g = \gamma $$
+A fluid with a constant density is considered an \textbf{incompressible} fluid. Through integration, we obtain
+$$ P_1 - P_2 = \rho g (z_2 - z_1) = \rho g h$$
+which tells us that in an incompressible fluid at rest, the pressure increases linearly with depth in a gravity field and does not change in the horizontal direction.
+\\ \\
+On the other hand, we consider gases such as oxygen, nitrogen, and air as \textbf{compressible} fluids since the density can change with pressure and temperature changes. By applying the ideal gas law in isothermal conditions, we get that
+$$ P_2 = P_1 \exp{\left(-\frac{g(z_2 - z_1)}{RT_o}\right)}$$
+\subsubsection{Measurement of Pressure}
+Pressure values must be stated with respect to a reference level. The pressure is given as either absolute pressure or gauge pressure.
+\begin{itemize}
+\item \textit{Absolute Pressure:} Pressure value measured referencing a perfect vacuum (absolute zero pressure)
+\item \textit{Gauge Pressure:} Pressure value measured relative to the local atmospheric pressure
+\end{itemize}
+To convert between the two, we use the following relationship
+$$ P_{abs} = P_{atm} + P_{gauge}$$
+\subsubsection{Instruments for Measuring Pressure}
+\begin{itemize}
+\item Manometers
+\item Bourdon Pressure Gauge
+\item Transducers
+\end{itemize}
+\subsection{Hydrostatic Forces on Submerged Surfaces}
+When a surface is submerged in a fluid, forces develop on the surface due to the fluid. For fluids at rest, the force must be perpendicular to the surface since there are no shearing stresses present. The pressure will also vary linearly with depth if the fluid is incompressible. the differential force on a differential area $dA$ of a submerged surface is 
+$$ d\vec{F_p} = -p\text{ } dA \text{ } \vec{n} = -p \text{ } dA $$
+The total pressure force on an area can be obtained by integrating the differential force over the area
+$$\vec{F_R} = \iint\limits_{A} d\vec{F}$$
+\subsubsection{Method 1}
+\subsubsection{Method 2}
+This section was not required - consult course notes if interested
+\subsubsection{Method 3: Pressure Prism Concept}
+\subsection{Buoyancy}
+Objects feel lighter and weigh less in a liquid than in air. This suggests that a fluid exerts an upward force on a body immersed in it. This is called the buoyant force and is denoted as $F_B$. This is caused by the increase of pressure in a fluid with depth. We conclude that the buoyant force acting on an object is equal to the weight of the liquid displaced by the solid body. 
+$$ F_P = \rho g V \vec{k} $$
+This is known as \textbf{Archimedes's Principle}. Note that the buoyant force acts upward, and it is independent of the density of the solid body
+$$ \frac{V_{sub}}{V_{total}} = \frac{\rho_{body}}{\rho_{fluid}}$$
+\subsubsection{Stability of Immersed and Floating Bodies}
+The stability of a body can be determined by considering what happens when it is displaced from its equilibrium position.
+\begin{itemize}
+\item \textit{Stable Equilibrium:} Any small disturbance generates a restoring force to return to initial equilibrium position
+\item \textit{Neutral Equilibrium:} If equilibrium is disturbed, the body will stay at the new position 
+\item \textit{Unstable Equilibrium:} Any disturbance, even infinitesimal, will prevent the body from returning to equilibrium 
+\end{itemize}
+For completely submerged bodies:
+\begin{itemize}
+\item If the center of gravity is below the center of buoyancy, the object is bottom heavy, and is stable
+\item If the center of gravity is below the center of buoyancy, the object is top-heavy, and is unstable
+\end{itemize}
+
+
 
 \end{document}
+
 

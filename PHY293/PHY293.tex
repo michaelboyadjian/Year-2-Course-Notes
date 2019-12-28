@@ -15,7 +15,7 @@
 \tableofcontents
 
 \pagebreak
-
+\part{Waves}
 \section{Simple Harmonic Oscillators}
 \subsection{Equations of Motion}
 If we look at a mass attached to a spring, we can model its motion using Hooke's Law:
@@ -52,7 +52,7 @@ There are 3 cases of damping we can consider, which we can characterize as light
 \subsubsection{Light Damping}
 For light damping to occur, we consider the case where $\frac{\gamma^2}{4} < \omega_0^2$. When this happens, the general solution becomes $$x(t) = Ae^{\frac{\gamma t}{2}}cos( \omega t + \phi) \quad \quad  \rightarrow  \quad \quad \omega = \sqrt{\omega_0 ^2 - \frac{\gamma ^2}{4}}$$
 A graph of the lightly damped model shows the decaying amplitude. We see that there is actually a factor by which this occurs 
-$$ ln(\frac{A_n}{A_{n+1}}) = e^{\frac{\gamma T}{2}}$$ which is known as the \textbf{logarithmic decrement}
+$$ ln\left(\frac{A_n}{A_{n+1}}\right) = e^{\frac{\gamma T}{2}}$$ which is known as the \textbf{logarithmic decrement}
 \subsubsection{Critical Damping}
 This is an interesting case. Since $\omega_o^2 - \frac{\gamma^2}{4} = 0$, then $r_p = r_m = -\frac{\gamma}{2}$. Therefore, our general solution becomes
 $$ x(t) = (a_p + a_m)e^{-\frac{\gamma t}{2}}$$ But this would not work as it could easily become an over constrained problem. So, the general solution actually becomes:
@@ -81,27 +81,156 @@ Remember the following for this chapter:
 \item At resonance, the amplitude is approximately $A \approx QA_f$
 \item The resonance frequency is exactly $\omega_0$ because it is where the peak in velocity response and power absorption are both located.
 \end{itemize}
+
 \subsection{Forced Undamped Oscillator}
 Consider the SHO we discussed earlier, but this time with an engine attached to the system. If the oscillator is being driven at a frequency $\omega$ and applying a force with amplitude, $F_0$ , its equation of motion could be modelled as $$ \ddot x + \omega_0^2 x = \frac{F_0}{m} \cos (\omega t)$$
+This is a non-homogeneous ODE. We don't consider the complimentary solution in this case, since this was covered in the unforced case. A particular solution to this problem is 
+$$ x(t) = A(\omega)\cos (\omega t - \delta(\omega))$$
+There are several cases to consider here:
+\begin{itemize}
+\item If $\delta = 0$, then $\cos \delta = 1$, so:
+$$ A(\omega) = \frac{\omega_0^2}{\omega_0^2 - \omega^2} A_f \quad \quad \omega_0 > \omega $$
+\item If $\delta = \pi$, then $\cos \delta = -1$, so:
+$$ A(\omega) = -\frac{\omega_0^2}{\omega_0^2 - \omega^2} A_f\quad \quad \omega_0 < \omega $$
+\end{itemize}
+In the case where $\omega_0 = \omega$, the general solution from above cannot be applied. Instead, the solution is the following $$ x(t) = \frac{1}{2}A_f\omega_0 t \cos \left(\omega_0 t - \frac{\pi}{2}\right)$$
 \subsection{Forced Damped Oscillator}
+If we add damping to the forced oscillator system, we obtain the following equation of motion $$ \ddot x + \gamma \dot{x} + \omega_0^2 x = A_f \omega_0^2 \cos (\omega t)$$ 
+We can consider the same general solution as the undamped case
+$$ x(t) = A(\omega)\cos (\omega t - \delta(\omega))$$
+where $A(\omega)$ and $\delta(\omega)$ are as follows
+$$ A(\omega) = \frac{\omega_0^2}{\sqrt{\gamma^2 \omega^2 + (\omega_0^2-\omega^2)^2}} A_f \quad \quad \quad \delta(\omega) = \arctan \left(\frac{\gamma \omega}{\omega_0^2 - \omega^2}\right)$$
+
+\subsection{Varying the Forcing Frequency}
+It appears that resonance occurs when $\omega = \omega_0$, but this is in fact not the case. 
+$$ \omega^2_{max} = \omega_0^2 - \frac{\gamma^2}{2} = \omega_0^2\left[1 - \frac{1}{2Q^2}\right]$$
+The maximum amplitude is found when $\omega=\omega_{max}$
+$$ A_{max} = A(\omega_{max}) = \frac{Q}{\sqrt{1 - \frac{1}{4Q^2}}} A_f $$
+For practical purposes however, $\omega_{max} \approx \omega_0$ and $A_{max} \approx QA_f = \frac{F_0Q}{k}$
+
+\subsection{Power Absorbed by Damping During Forced Oscillations}
+The rate of energy loss due to damping is given as $$ - \dot{E} (\omega, t) = P (\omega, t) = bv^2 = bV^2(\omega)\sin^2(\omega t - \delta)$$ where $V(\omega)$ is the velocity response $$ V(\omega) = \frac{\omega_0\omega}{\sqrt{\gamma^2 \omega^2 + (\omega_0^2-\omega^2)^2}} A_f$$
+The average power as a function of only $\omega$ is given as 
+$$ \bar{P} (\omega) = \frac{F_0^2}{2m} \frac{\gamma}{\gamma^2+ (\frac{\omega_0^2}{\omega} - \omega)^2}$$
+Friction absorbs the most energy when $\omega = \omega_0$. At this frequency, the average power becomes 
+$$ \bar{P}_{max}  = \frac{F_0^2}{2\gamma m} =  \frac{F_0^2}{2b} $$ For this reason we call the natural frequency, $\omega_0$ the resonant frequency.
 \pagebreak
 \section{Coupled Harmonic Oscillators and Eigenmodes}
 \subsection{Coupled Pendulums}
-\subsection{Beating Phenomenon}
+Consider two identical pendulums of length $L$ with a mass $m$ hanging from each. The masses are connected with a spring of stiffness $k$. There are two natural modes of motion to consider in this situation
+\begin{itemize}
+\item \textbf{Antisymmetric Normal Mode:}  Both pendulums oscillate in perfect sync , with the same amplitude and phase
+$$ x_A(t) = x_B(t) = A \cos(\omega_1 t)$$
+The spring is neither stretched or compressed and thus does not play any role in the motion. All elements of the system oscillate at the same frequency $\omega_1 = \omega_p$
+\item \textbf{Symmetric Normal Mode:} The pendulums will oscillate 180 degrees out of phase and with a single angular frequency $\omega_2$
+$$ x_A(t) = A \cos (\omega_2 t) \quad \quad \quad x_B(t) = A \cos (\omega_2 t + \pi)$$
+This is considered a normal mode because both pendulums oscillate at the same frequency.
+\end{itemize}
 \subsection{General Solution Method}
+Consider three masses coupled together with springs of spring constant $k$  with two fixed ends:
+\begin{enumerate}
+\item Define the equations of motion
+$$ m\ddot{x}_A = -kx_A - k(x_A-x_B)$$
+$$ m\ddot{x}_B = -k(x_B-x_A) -  k(x_B-x_C)$$
+$$ m\ddot{x}_C = -k(x_C-x_B) - kx_C $$
+\item Substitute $x(t) = A \cos (\omega t)$ and $ \ddot{x}(t) = -A\omega^2 \cos (\omega t)$ to simplify equations of motion 
+$$ -A\omega^2m= -2kA + kB$$
+$$ -B\omega^2m = -kB + kA +kC$$
+$$ -C\omega^2m = -2kC +kB$$
+\item Generate the matrix system of equations
+$$ \begin{bmatrix}
+2k - \omega^2m&-k&0 \\
+-k&2k - \omega^2m&-k \\
+0&-k&2k - \omega^2m 
+\end{bmatrix}
+\begin{bmatrix}
+A\\
+B\\
+C
+\end{bmatrix}
+= \vec{0}$$
+\item Take the determinant and find the eigenvalues
+$$ \det{M} = (2k-\omega^2m)(2k-\omega^2m-k^2)(2k-\omega^2m+k^2)$$
+$$ \omega_1 = \sqrt{\frac{2k}{m}} \quad \quad \quad \omega_2 = \pm \sqrt{\frac{(2-\sqrt{2})k}{m}} $$
+\item Compose general solution and solve for the constants using the initial conditions
+$$x(t) = C\cos(\omega_1 t) + D\cos(\omega_2 t) $$
+\end{enumerate}
 \pagebreak
 \section{Wave Equation and Standing Waves}
 \subsection{Wave Equation}
+The wave equation is given as the following 
+$$ \frac{\partial ^2 y}{\partial t^2} = \nu^2\frac{\partial^2 y}{\partial x^2}$$
 \subsection{Standing Waves}
+The general equation for standing waves can be given as such that the variables are separable
+$$ y(x,t) = f(x)h(t)$$ 
+Therefore, the general solution for a standing waves on a string is
+$$ y_n(x,t) = A_n \sin \left(\frac{n\pi x}{L}\right) \cos (\omega _n t)$$
+where $n$ is known as the harmonic number. 
+\\ \\
+Some important things to note about standing waves:
+\begin{itemize}
+\item A \textbf{node} is a position where there is zero displacement (the string doesn't move)
+\item An \textbf{antinode} is the position where the largest displacement or amplitude occurs
+\item The mode with no nodes is known as the \textbf{fundamental} mode or \textbf{first harmonic}
+\item The $n^{th}$ harmonic has $n-1$ nodes and $n$ antinodes
+\item The wavelength of the $n^{th}$ mode is $\lambda_n = \frac{2L}{n}$ and each has a corresponding wave number, $k_n = \frac{2\pi}{\lambda_n} = \frac{n\pi}{L}$
+\end{itemize}
+\subsection{Energy}
+The energy per unit length of a string is given as
+$$E = \frac{1}{2} \mu \int_0^L \left[ \left(\frac{\partial y}{\partial t}\right)^2 + \nu^2 \left(\frac{\partial y}{\partial t}\right)^2 \right] dx $$
+For a single mode, the energy equation is simplified to 
+$$ E_n = \frac{1}{4}\mu L \omega_n^2A_n^2$$ And the total energy is just the sum of the energies of each mode
+$$ E = \sum_{n=1}^{\infty} E_n = \frac{1}{4}\mu L \sum_{n=1}^{\infty} \omega_n^2A_n^2$$
 \pagebreak
 \section{Travelling Waves}
-\subsection{Superposition of Modes}
+The main travelling wave function that will be encountered is the following 
+$$y(x,t) = A \sin (kx \pm \omega t)$$ 
+The relationship  $v = \frac{\omega}{k} = \lambda \nu$ may also be useful
 \subsection{Solutions to the Wave Equation}
-\subsection{Energy}
+The most general solution to the wave equation is $$y(x,t) = f(x-vt) + g(x-vt)$$
 \subsection{Reflection and Transmission}
-\subsection{Higher Dimensions}
+When a wave hits discontinuity part of it is transmitted and part of it is reflected. This discontinuity occurs in the phase speed. If the mass density, $\mu$ or the tension, $t$ changes suddenly, the phase speed will as well. Therefore, there are two phase speeds
+$$ v_1 =\sqrt{ \frac{T}{\mu_1}} \quad x<0 \quad \quad \quad v_2 =\sqrt{ \frac{T}{\mu_2}} \quad x>0 $$
+We find that the amplitude of the transmitted wave is equal to the sum of the amplitudes of the incident and reflected waves in the following relation
+$$ A_I + A_R = A_T$$
+From this we can derive the transmission and reflection coefficients, $\tau_{12}$ and $\rho_{12}$
+$$ \tau_{12} = \frac{2k_1}{k_1+k_2} = \frac{2\sqrt{\mu_1}}{\sqrt{\mu_1}+\sqrt{\mu_2}}$$
+$$ \rho_{12} = \frac{k_1-k2}{k_1+k_2} = \frac{\sqrt{\mu_1}-\sqrt{\mu_2}}{\sqrt{\mu_1}+\sqrt{\mu_2}}$$
+
 \pagebreak
 \section{Wave Packets and Dispersion}
 
+If the phase speed depends on the wavenumber or frequency of the wave, this is said to be in a dispersive medium. In this case,
+$$ \frac{\omega}{k} = v(\omega)$$
+The important part in this chapter is being able to find the group velocity, which is the following
+$$ v_g = \frac{d\omega}{dk}$$ 
+\pagebreak
 
 \end{document}
+
+
+\part{Modern Physics}
+\pagebreak
+\section{Special Relativity}
+\section{Photoelectric Effect}
+\section{Compton Scattering}
+\section{Line Spectra}
+\section{Double-Slit Diffraction}
+\section{Wave-Particle Duality}
+\section{Uncertainty Principle}
+\section{Wavefunctions}
+\section{Schrödinger Wave Equation}
+The Schrödinger wave equation in its time-dependent form for a particle moving in a potential $V$ in one dimension is given by
+$$i\bar{h} \frac{\partial \Psi (x,t) }{\partial t} = - \frac{\bar{h}^2}{2m} \frac{\partial ^2\Psi (x,t) }{\partial t^2} + V\Psi (x,t) $$
+
+\subsection{Normalization and Probability}
+The probability of the particle being between $x_1$ and 
+$x_2$ is given by
+$$P = \int_{x_1}^{x_2} \Psi * \Psi dx $$
+The wave function must also be normalized so that the probability of the particle being somewhere on the axis is 1
+$$ \int_{-\infty}^{\infty} \Psi (x,t) * \Psi (x,t) dx  =1$$
+
+
+
+
+

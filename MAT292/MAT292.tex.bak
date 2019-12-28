@@ -180,4 +180,158 @@ We see that $$\vec{x}_2(t) = u(t) - iw(t)$$ meaning that $\vec{x_1}(t)$ and $\ve
 \subsection{Repeated Eigenvalues}
 We continue to look at the system $\vec{x'} = A\vec{x}$ 
 
+\pagebreak
+
+\section{Numerical Methods}
+\subsection{Euler's Method}
+Given the initial value problem
+$$ \frac{dy}{dt} = f(t,y) \quad \quad \quad y(t_o) = y_o $$ then the approximation of $y= \phi (t)$ is 
+$$ y_{n+1} = y_n + f(t_n, y_n)(t_{n+1} - t_n) $$
+If a uniform step size $h$ is used , then $t_{n+1} - t_n = h$, for all $n$, and the above equation simplifies to
+$$y_{n+1} = y_n + hf(t_n, y_n)$$
+
+
+\subsection{Accuracy of Numerical Methods}
+\subsection{Improved Euler Method}
+Given the initial value problem
+$$ \frac{dy}{dt} = f(t,y) \quad \quad \quad y(t_o) = y_o $$ then the approximation of $y= \phi (t)$ is 
+$$ y_{n+1} = y_n + \frac{h}{2} \left( f(t_n, y_n)+ f[t_n + h, y_n + hf(t_n, y_n)] \right) $$
+If $f(t,y) = f(t)$, then the above equation simplifies to
+$$y_{n+1} = y_n + \frac{h}{2} [f(t_n) + f(t_n + h)] $$
+\subsection{Runge-Kutta Method}
+Given the initial value problem
+$$ \frac{dy}{dt} = f(t,y) \quad \quad \quad y(t_o) = y_o $$ then the approximation of $y= \phi (t)$ is
+$$ y_{n+1} = y_n + h \left( \frac{k_{n1} + 2k_{n2} + 2k_{n3} + k_{n4}}{6}\right)$$
+where
+$$ k_{n1} = $$ 
+$$ k_{n2} = $$
+$$ k_{n3} = $$
+$$ k_{n4} = $$
+If $f(t,y) = f(t)$, then $$y_{n+1} = y_n + \frac{h}{6}\left[f(t_n) + 4f\left(t_n + \frac{h}{2}\right) + f(t_n + h)\right]$$
+
+
+\subsection{Numerical Methods for Systems of First Order Equations}
+
+\pagebreak
+
+\section{Systems of First Order Linear Equations}
+\subsection{Basic Theory}
+\subsubsection{Existence and Uniqueness for First Order Linear Systems}
+If $P(t)$ and $g(t)$ are continuous on an open interval $U = (\alpha, \beta)$, then there exists a unique solution $X = \Phi (t)$ of the initial value problem 
+$$ x' = P(t)x + g(t) \quad \quad	x(t_o) = x_o$$
+where $t_o$ is any point in $I$ and $x_o$ is any constant with $n$ components. Moreover the solution exists throughout the interval $I$.
+\subsubsection{Principle of Superposition}
+If $x_1, x_2, ..., x_k$ are solutions to the homogeneous linear system $x' = P(t)x$ on the interval $I = (\alpha, \beta)$, then the linear combination
+$$c_1x_1 + c_2x_2 +\cdots +c_kx_k$$ is also a solution on $I$.
+\subsection{Fundamental Matrices}
+\subsubsection{The Fundamental Matrix}
+If a fundamental set of solutions to an equation given by $\vec{x}' = P(t)\vec{x}$ is $\vec{x_1}(t), ..., \vec{x_n}$ then we can define what is called the \textbf{fundamental matrix}:
+$$X(t) = [\vec{x_1}(t), \vec{x_2}(t), ..., \vec{x_n}(t)]$$
+The columns of the fundamental matrix are made up of the linearly independent solutions of the system. \\ \\ 
+Given an initial value problem whose general solution is $$ \vec{x} = c_1\vec{x_1}(t) + ... + c_n\vec{x_n}(t)$$, we can write this solution in terms of the fundamental matrix
+$$\vec{x} = X(t)\vec{c} = X(t)X^{-1}(t_0)x_0$$
+\subsubsection{The Matrix Exponential Function $e^{At}$}
+Let $A$ be an $n \times n$ constant matrix. The matrix exponential function is defined to be 
+$$ e^{At} = I_n + At + \frac{1}{2!}A^2t^2 + \frac{1}{3!}A^3t^3 + \cdots = \sum_{k=0}^{\infty} A^k \frac{t^k}{k!}$$
+This expression can be simplified to $$ e^{At} = \Phi(t)$$ which tells us that the solution to the initial value problem $x'=Ax$, $x(0) = x_0$, is $x = e^{At}x_0$ The following properties hold true for the matrix exponential function:
+\begin{enumerate}
+\item $e^{A(t+\tau} = e^{At}e^{A\tau}$
+\item $Ae^{At} = e^{At}A$ 
+\item $(e^{At})^{-1} = e^{-At}$
+\item $e^{(A+B)t} = e^{At}e^{Bt}$, if $AB = BA$
+\end{enumerate}
+In order to construct the matrix exponential function, follow these steps:
+\begin{enumerate}
+\item Generate the fundamental matrix $X(t)$
+\item Find $X^{-1}(0)$
+\item Compute $e^{At} = X(t)X^{-1}(0)$ 
+\end{enumerate}
+\subsection{Non-Homogeneous Linear Systems}
+\subsubsection{Variation of Parameters}
+Let's consider the non-homogeneous system 
+$$ \vec{x}=P(t)\vec{x} + g(t)$$
+
+
+\pagebreak
+
+
+\section{Second Order Linear Equations}
+\subsection{Definitions}
+A second order differential equation involving the independent variable $t$, and an unknown function or dependent variable $y = y(t)$ along with its first and second derivatives. This equation is in the form
+$$ y'' = f(t, y, y')$$
+An initial value problem for a second order equation on an interval $I$ includes two initial conditions
+$$ y(t_o) = y_o \quad \quad y'(t_o) = y_1$$
+A second order differential equation is said to be linear if it can be written in the standard form
+$$y'' + p(t)y' +q(t)y = g(t)$$
+where the coefficient of $y''$ is equal to 1. If $g(t)=0$ for all $t$, the equation is said to be \textbf{homogeneous}. It is otherwise \textbf{non-homogeneous}.
+\subsection{Theory of Second Order Linear Homogeneous Equations}
+\subsubsection{Existence and Uniqueness of Solutions}
+Let $p(t)$, $q(t)$, and $g(t)$ be continuous on an open interval $I$, let $t_0$ be any point in $I$, and let $y_0$ and $y'_0$ be given numbers. Then there exists a unique solution $y= \phi(t)$ of the differential equation  $$y'' + p(t)y' +q(t)y = g(t)$$
+that satisfies the given initial conditions. The solution exists throughout the interval $I$.\\ \\
+In order to find the intervals of existence, simply put the differential equation in standard form and find the points of discontinuity for $p(t)$, $q(t)$, and $g(t)$. Then deduce the correct intervals where the solution will exist.
+\subsubsection{Linearity Operators and Superposition Principle}
+Let $L[y] = y''+py'+qy$, where $p$ and $q$ are continuous functions on an interval $I$. If $y_1$ and $y_2$ are any twice differentiable functions on $I$ and $c_1$ and $c_2$ are any constants, then 
+$$L[c_1y_1 + c_2y_2] = c_1L[y_1] + c_2L[y_2]$$ 
+$L[y]$ is called the linearity of the differential operator and the above expression is referred to as the principle of superposition for linear homogeneous equations. \\
+\\
+Let $L[y] = y'' + py' +qy$, where $p$ and $q$ are continuous functions on an interval $I$. If $y_1$ and $y_2$ are solutions of $L[y] = 0$, then the linear combination
+$$ y = c_1y_1(t) + c_2y_2(t)$$
+is also a solution for any values of the constants $c_1$ and $c_2$
+
+\subsubsection{Wronskians and Fundamental Sets of Solutions} 
+As previously mentioned, the Wronskian is given as 
+$$W[x_1, x_2](t) = \begin{vmatrix}
+x_{11}(t)&x_{12}(t) \\
+x_{21}(t)&x_{22}(t) 
+\end{vmatrix}$$
+Suppose that $x_1$ and $x_2$ are two solutions of $x'=P(t)x$ and their Wronskian is not zero on $I$. Then $x_1$ and $x_2$ form a fundamental set of solutions and the general solution is given by
+$$x = c_1x_1(t) + c_2x_2(t)$$ where $c_1$ and $c_2$ are arbitrary constants. If an initial condition is given, this can be used to determine the constants uniquely.
+\\ \\
+This same theorem applies to the second order differential equation $$y'' + p(t)y' +q(t)y = g(t)$$
+\subsubsection{Abel's Theorem}
+The Wronskian of two solutions of the system $x' = P(t)(x)$ is given by
+$$W(t) = c \left[ \exp \int tr (P)(t) dt\right] = c \exp \int [p_{11}(t) + p_{22}(t)]dt$$ For a second order equation of the form $y'' + p(t)y' +q(t)y = g(t)$, the Wronskian is given by  
+$$W(t) = c  \exp\left[ - \int(p)(t) dt\right]
+$$ where $c$ is a constant that depends on the pair of solutions. An important result may also be that the first derivative of the Wronskian is the following:
+$$ W' = (p_{11} + p_{22})(x_{11}x_{22} - x_{12}x_{21})$$
+
+
+\subsection{Linear Homogeneous Equations with Constant Coefficients}
+We'd like to find the set of solutions to the following equation with constant coefficients:
+$$ay'' + by'+cy =0$$
+\subsection{Mechanical and Electrical Vibrations}
+\subsubsection{Undamped Free Vibrations}
+Recall that the equation of motion for a damped spring-mass system with external forcing is $$my'' +\gamma y' + ky = F(t)$$
+With no damping or forcing, this equation reduces to $$y'' + \omega_0^2 y = 0$$ The general solution for this problem is $$ y = A\cos \omega_0 t + B \sin \omega_0 t $$
+\subsubsection{Damped Free Vibrations}
+Re-introducing damping, we obtain the equation of motion $$my'' +\gamma y' + ky = 0$$ There are three cases to consider, which is based on the discriminant $\gamma^2 - 4km$
+\begin{enumerate}
+\item \textbf{Underdamped Harmonic Motion:} In this case $\gamma^2 - 4km < 0$. The roots are complex and the general solution is 
+$$ y = e^{-\gamma t/2m}(A\cos vt + B\sin vt)$$
+\item \textbf{Critically Damped Harmonic Motion:} In this case $\gamma^2 - 4km = 0$. The roots are repeated and the general solution is 
+$$ y = (A+Bt)e^{-\gamma t/2m}$$
+\item \textbf{Over Damped Harmonic Motion:} In this case $\gamma^2 - 4km > 0$. The roots are real, distinct, and negative. The general solution is 
+$$ y = Ae^{\lambda_1 t} + Be^{\lambda_2 t}$$
+
+\end{enumerate}
+\subsection{Non-Homogeneous Equations}
+Let's consider the non-homogeneous equation 
+$$y'' +p(t)y'+q(t)y=g(t)$$
+The general solution to this problem can be written as $$y = \phi(t) = Ay_1(t)+By_2(t)+Y(t)$$
+where $y_1$ and $y_2$ form a fundamental set of solutions corresponding to the homogeneous equation (where $g(t) = 0$) and Y is some specific solution to the non-homogeneous equation.  \\ \\ There are 3 steps to solve the non-homogeneous equation:
+\begin{enumerate}
+\item Find the general solution $c_1y_1(t) +c_2y_2(t)$ of the corresponding homogeneous equation. This is called the \textbf{complimentary solution} ($y_c(t)$).
+\item Find some single solution $Y(t)$ of the non-homogeneous equation. This is called the \textbf{particular solution} ($y_p(t)$).
+\item Combine the two solutions in the form $y(t) = y_c(t) + y_p(t)$
+\end{enumerate}
+In order to find the particular solution, we can use the method of undetermined coefficients. To use this method, we must come up with a guess to the function $y_p(t)$ that may satisfy the differential equation. The following summarizes the guess functions depending on $g(t)$.
+\begin{itemize}
+\item $a e^{\beta t} \quad \rightarrow \quad Ae^{\beta t}$ 
+\item $a \cos {\beta t} \quad \rightarrow \quad A \cos {\beta t} + B \sin {\beta t}$ 
+\item $b \sin {\beta t} \quad \rightarrow \quad A \cos {\beta t} + B \sin {\beta t}$ 
+\item $a \cos {\beta t} + b \sin {\beta t} \quad \rightarrow \quad A \cos {\beta t} + B \sin {\beta t}$ 
+\item $n^{th}$ degree polynomial $\quad \rightarrow \quad A_nt^n + A_{n-1}t^{n-1} + \cdots A_1t + A_0$
+
+\end{itemize}
+ 
 \end{document}
