@@ -22,4 +22,51 @@
 \bigskip
 \bigskip
 
+\section{Static Electric Fields}
+
+\subsection{Fundamental Postulates of Electrostatics in Free Space}
+Electric field intensity is defined as the force per unit charge that a very small stationary test charge experiences when it is placed in a region where and electric field exists:
+$$ \vec{E} = \lim_{q \to \infty} \frac{\vec{F}}{q} \quad \left[\frac{V}{m}\right] $$
+This is proportional to and in the direction of the force $\vec{F}$. We can express the inverse relationship, which gives the force $\vec{F}$ on a charge $q$ in an electric field $\vec{E}$ \\ \\
+The two fundamental postulates of electrostatics in free space specify the \textbf{divergence} and \textbf{curl} of $\vec{E}$
+$$ \vec{ \nabla}  \cdot \vec{E} = \frac{\rho}{\epsilon_0} \quad \quad \quad \vec{ \nabla}  \times \vec{E} =0 $$
+These two expression are point relations, and are referred to as the differential form of the postulates of electrostatics. We can integrate to get the expressions for a total field of an aggregate or a distribution of charges.
+$$ \oint_{S} \vec{ E}  \cdot ds = \frac{Q}{\epsilon_0}\quad \quad \quad \\oint_{C} \vec{ E}  \cdot dl = 0 $$
+
+
+\subsection{Coulomb's Law}
+We can express the electric field intensity on a point charge as the following:
+$$ \vec{E} = \vec{a_R}E_R = \vec{a_R} \frac{q}{4 \pi \epsilon_0 R^2} \quad \left[\frac{V}{m}\right]$$
+Here we assume the charge is located at the origin, but this is often not the case. If we want to account for the changes in $\vec{a_R}$ we can use the vector form of the equation above:
+$$ \vec{E_p} =  \frac{q (\vec{R} - \vec{R'})}{4 \pi \epsilon_0 |\vec{R} - \vec{R'}|^3} \quad \left[\frac{V}{m}\right]$$
+We are also able to determine the force $\vec{F_{12}}$ experienced by a charge $q_2$ when placed in the field of another charge $q_1$. This is in fact the mathematical form of Coulomb's Law:
+$$ \vec{F_{12}} = q_2\vec{E_{12}} = \vec{a_R} \frac{q_1q_2}{4\pi\epsilon_0R^2} \quad [N]$$
+
+\subsubsection{Electric Field Due to a System of Discrete Charges}
+All of these equations presented so far involve only a single charge, but what if we have a field created from many point charges. Since electric field potential is a liner function, we are able to apply the principle of superposition. The electric field $\vec{E}$ is thus the the vector sum of the fields caused by the individual charges
+$$ \vec{E} = \frac{1}{4\pi\epsilon_0} \sum_{k=1}^{n} \frac{q_k (\vec{R} - \vec{R'_k})}{ |\vec{R} - \vec{R'_k}|^3} \quad \left[\frac{V}{m}\right]$$
+
+\subsection{Electric Field Due to a Continuous Distribution of Charge}
+The electric field from a distribution of charge can be obtained by integrating the contribution of an element charge over the charge distribution. The differential element is the following:
+$$ d\vec{E} = \vec{a_R}\frac{\rho dv'}{4\pi \epsilon_0 R^2} $$
+Integrating this, we get:
+$$ \vec{E} = \frac{1}{4\pi\epsilon_0} \int_{V'} \rho \frac{\vec{R}}{R^3} dv' 	\quad	\left[\frac{V}{m}\right] $$
+This is integrating a charge over the volume. If we want to integrate over the surface, then:
+$$ \vec{E} = \frac{1}{4\pi\epsilon_0} \int_{S'} \vec{a_R}\frac{\rho_S}{R^2} ds'	\quad	 \left[\frac{V}{m}\right] $$
+Likewise, if we have a line charge:
+$$ \vec{E} = \frac{1}{4\pi\epsilon_0} \int_{L'} \vec{a_R}\frac{\rho_l}{R^2} dl'	\quad	 \left[\frac{V}{m}\right] $$
+\subsection{Gauss's Law and Applications}
+
+\subsection{Electric Potential}
+
+\subsection{Dielectrics in Static Electric Field}
+
+\subsection{Electric Flux Density and Dielectric Constant}
+
+\subsection{Boundary Conditions for Static Electric Fields}
+
+\subsection{Capacitors and Capacitance}
+
+\subsection{Electrostatic Energy Forces}
+
 \end{document}

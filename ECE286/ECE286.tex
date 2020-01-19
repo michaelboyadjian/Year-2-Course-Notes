@@ -1,6 +1,7 @@
 \documentclass[11pt]{article}
 \usepackage{fullpage}
 \usepackage{amsmath}
+\usepackage{amssymb}
 \usepackage{esint}
 \usepackage{cancel}
 \usepackage{graphicx}
@@ -21,5 +22,125 @@
 \bigskip
 \bigskip
 \bigskip
+
+
+\section{Introduction to Statistics and Data Analysis}
+
+\subsection{Definitions}
+\begin{itemize}
+\item \textbf{Probability:} Mathematical theory that models and analyses uncertainty based on 3 fundamental axioms
+\item \textbf{Statistics:} Empirical; based on data and measurements; we infer characteristics of a phenomenon
+\end{itemize}
+
+\subsection{Set Theory}
+A set is a set of objects (or elements) represented using capital letters $A$, $B$, $C$, $S$
+\begin{itemize}
+\item \textbf{Universal Set:} Set of all elements or objects of interest
+\item \textbf{Empty Set:} Set without any elements, denoted $\varnothing$
+\item \textbf{Compliment of a Set:} $A' = \{x | x \notin A\} $
+\item \textbf{Union of Two Sets:} $ A \cup B = \{x | x \in A \text{ or } x \in B\}$
+\item \textbf{Intersection of Two Sets:} $ A \cap B = \{x | x \in A \text{ and } x \in B\}$
+\item \textbf{Disjoint Sets:}  Also called mutually exclusive; $A$ and $B$ are disjoint iff  $A \cap B = \varnothing$
+\item \textbf{Subsets:} Denoted $A \subset B$; $A$ is a subset of $B$ iff $x \in A \implies x \in B$
+\end{itemize}
+
+\subsection{Counting}
+There are three different methods of counting
+\begin{enumerate}
+\item \textbf{With Replacement, With Ordering}
+\begin{itemize}
+\item Given $n$ distinct objects pick one, note down its kind, and put it back
+\item Repeat $k$ times
+\item Produces $n^k$ possibilities
+\item \textit{ex.} Number of 8-character passwords $= 62^8$
+\end{itemize}
+\item \textbf{Without Replacement, With Ordering}
+\begin{itemize}
+\item Same as previous, but no replacement
+\item Produces $\frac{n!}{(n-k)!}$ possibilities
+\item Describes number of \textbf{permutations}, denoted $_nP_k$
+\item \textit{ex.} Number of 8-character passwords without repeating characters $= \frac{62!}{54!}$
+\end{itemize}
+\bigskip
+\item \textbf{Without Replacement, Without Ordering}
+\begin{itemize}
+\item Ordering does not matter, two sequences with same objects count as the same
+\item Produces $\frac{n!}{k!(n-k)!}$ possibilities
+\item Describes number of \textbf{combinations}, denoted $_nC_k = {n \choose k}$
+\item \textit{ex.} Number of ways to pick 5 good chips and 3 bad chips out of 90 good and 10 defective $= {90 \choose 5}{ 10 \choose 3}$
+\end{itemize}
+\end{enumerate}
+
+\pagebreak
+
+\section{Probability}
+Probability theory rests on the notion of a random experiment. We don't know what the outcome will be until we actually run the experiment. There are three kinds of experiments:
+\begin{itemize}
+\item Designed
+\item Observational
+\item Retrospective
+\end{itemize}
+An experiment has a procedure and a measurement and always produces one outcome
+
+\subsection{Sample Spaces}
+The sample space describes the set of all possible outcomes  $(S)$. There are three different kinds of sample spaces
+\begin{itemize}
+\item Finite $\rightarrow$ discrete
+\item Countably Infinite $\rightarrow$ discrete
+\item Continuous
+\end{itemize}
+
+\subsection{Events}
+An event is the set of outcomes we are interested in. This must be a subset of the sample space. The \textbf{event class} is the set of all subsets of the sample space. Probabilities will be assigned to the events in $\varepsilon$
+
+\subsection{Relative Frequency}
+We want to assign probabilities consistent with the idea of relative frequency, which is defined as 
+$$\lim_{n \to \infty} \frac{n_A}{n} = p_A$$
+This is only useful to model the likelihood of events occurring, so probabilities are assigned using probability axioms
+
+\subsection{Axioms of Probability}
+\begin{enumerate}
+\item For any event $A$, $P(A) \geq 0$
+\item $P(S) = 1$
+\item For any two events $A$ and $B$ such that $P(A \cap B) = \varnothing$, then $ P(A\cup B) = P(A) + P(B)$
+\end{enumerate}
+
+\subsection{Properties}
+\begin{enumerate}
+\item $P(A') = 1 - P(A)$
+\item $P(A) \leq 1$
+\item $P(\varnothing) = 0$
+\item For any events $A$ and $B$: $P(A \cup B) = P(A) + P (B) - P(A \cap B)$
+\end{enumerate}
+
+\subsection{Conditional Probability}
+Conditional probability describes the probability of some event $B$ occurring given an event $A$ has occurred. This is denoted as $P(B|A)$, which is read as \textit{"the probability of $B$ given $A$"}. \\ \\ A conditional probability relative to a subspace $A$ of $S$ may also be calculated directly from the probabilities assigned to the elements of the original sample space $S$
+$$ P(B|A) = \frac{P(A \cap B)}{P(A)}$$
+
+\subsubsection{Independent Events}
+Two events are said to be independent if and only if 
+$$P(B|A) = P(B) \quad \quad \text{or} \quad  \quad P(A|B) = P(A)$$
+$A$ and $B$ are otherwise dependent
+
+\subsubsection{Product Rule and Multiplicative Rule}
+If in an experiment, both events $A$ and $B$ can occur, then 
+$$ P(A \cap B) = P(A)P(B|A)$$
+We can use this to find another expression for the independence of events. Two events $A$ and $B$ are independent if and only if 
+$$ P(A \cap B) = P(A)P(B)$$
+This multiplicative rule can be extended to more than just two-event situations. If, in an experiment, the events $A_1$, $A_2$, ... $A_k$ occur, then
+$$ P(A_1 \cap A_2 \cap \cdots \cap A_k) = P(A_1)P(A_2|A_1)P(A_3|A_1 \cap A_2) \cdots P(A_k| A_1 \cap A_2 \cap \cdots A_{k-1})$$ If these events are independent, then 
+$$ P(A_1 \cap A_2 \cap \cdots \cap A_k) = P(A_1)P(A_2)P(A_3) \cdots P(A_k)$$
+
+\subsection{Bayes' Rule}
+
+\pagebreak
+
+\section{Random Variables, Probability Distributions and Expectation}
+\section{Discrete and Continuous Probability Distributions}
+\section{Functions of Random Variables}
+\section{Estimation Problems}
+\section{Hypothesis Testing}
+\section{Simple Linear Regression and Correlation}
+
 
 \end{document}
