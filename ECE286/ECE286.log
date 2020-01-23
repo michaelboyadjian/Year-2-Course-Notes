@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex 2019.5.8)  22 JAN 2020 18:10
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex 2019.5.8)  22 JAN 2020 23:20
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -268,7 +268,7 @@ ts/cm/cmr17.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts
 cmsy8.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cm
 ti10.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/symbol
 s/msbm10.pfb>
-Output written on ECE286.pdf (8 pages, 153222 bytes).
+Output written on ECE286.pdf (8 pages, 153225 bytes).
 PDF statistics:
  83 PDF objects out of 1000 (max. 8388607)
  59 compressed objects within 1 object stream
