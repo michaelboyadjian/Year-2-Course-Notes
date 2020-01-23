@@ -11,10 +11,10 @@
 \contentsline {subsection}{\numberline {2.6}Conditional Probability}{6}% 
 \contentsline {subsubsection}{\numberline {2.6.1}Independent Events}{6}% 
 \contentsline {subsubsection}{\numberline {2.6.2}Product Rule and Multiplicative Rule}{6}% 
-\contentsline {subsection}{\numberline {2.7}Bayes' Rule}{6}% 
-\contentsline {section}{\numberline {3}Random Variables, Probability Distributions and Expectation}{7}% 
-\contentsline {section}{\numberline {4}Discrete and Continuous Probability Distributions}{7}% 
-\contentsline {section}{\numberline {5}Functions of Random Variables}{7}% 
-\contentsline {section}{\numberline {6}Estimation Problems}{7}% 
-\contentsline {section}{\numberline {7}Hypothesis Testing}{7}% 
-\contentsline {section}{\numberline {8}Simple Linear Regression and Correlation}{7}% 
+\contentsline {subsection}{\numberline {2.7}Bayes' Rule}{7}% 
+\contentsline {section}{\numberline {3}Random Variables, Probability Distributions and Expectation}{8}% 
+\contentsline {section}{\numberline {4}Discrete and Continuous Probability Distributions}{8}% 
+\contentsline {section}{\numberline {5}Functions of Random Variables}{8}% 
+\contentsline {section}{\numberline {6}Estimation Problems}{8}% 
+\contentsline {section}{\numberline {7}Hypothesis Testing}{8}% 
+\contentsline {section}{\numberline {8}Simple Linear Regression and Correlation}{8}% 

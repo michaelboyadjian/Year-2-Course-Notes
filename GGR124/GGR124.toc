@@ -1,0 +1,11 @@
+\contentsline {section}{\numberline {1}Lecture 01: 07 January 2020}{3}% 
+\contentsline {section}{\numberline {2}Lecture 02: 14 January 2020}{3}% 
+\contentsline {subsection}{\numberline {2.1}Time Space Compression}{3}% 
+\contentsline {subsection}{\numberline {2.2}Global Urbanization}{3}% 
+\contentsline {subsection}{\numberline {2.3}Globalization}{3}% 
+\contentsline {subsection}{\numberline {2.4}Global Cities}{4}% 
+\contentsline {subsubsection}{\numberline {2.4.1}Economic Restructuring}{4}% 
+\contentsline {subsubsection}{\numberline {2.4.2}Social Restructuring}{5}% 
+\contentsline {subsubsection}{\numberline {2.4.3}Physical Restructuring}{5}% 
+\contentsline {section}{\numberline {3}Lecture 03: 21 January 2020}{5}% 
+\contentsline {subsection}{\numberline {3.1}Western Treaties}{5}% 
