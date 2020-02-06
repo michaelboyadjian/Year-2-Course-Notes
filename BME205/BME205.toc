@@ -1,10 +1,53 @@
-\contentsline {section}{\numberline {1}Foundation of Physiology}{3}% 
-\contentsline {subsection}{\numberline {1.1}Homoeostasis}{3}% 
-\contentsline {subsubsection}{\numberline {1.1.1}Body Cells}{3}% 
-\contentsline {subsubsection}{\numberline {1.1.2}Body Systems}{3}% 
-\contentsline {subsubsection}{\numberline {1.1.3}Homoeostatic Control Systems}{4}% 
-\contentsline {section}{\numberline {2}Cell Physiology}{6}% 
-\contentsline {subsection}{\numberline {2.1}Cellular Metabolism}{6}% 
-\contentsline {subsection}{\numberline {2.2}Plasma Membrane}{7}% 
-\contentsline {section}{\numberline {3}Central Nervous System}{7}% 
-\contentsline {section}{\numberline {4}Peripheral Nervous System}{7}% 
+\contentsline {section}{\numberline {1}Foundation of Physiology}{4}% 
+\contentsline {subsection}{\numberline {1.1}Homoeostasis}{4}% 
+\contentsline {subsubsection}{\numberline {1.1.1}Body Cells}{4}% 
+\contentsline {subsubsection}{\numberline {1.1.2}Body Systems}{4}% 
+\contentsline {subsubsection}{\numberline {1.1.3}Homoeostatic Control Systems}{5}% 
+\contentsline {section}{\numberline {2}Cell Physiology}{7}% 
+\contentsline {subsection}{\numberline {2.1}Overview of Cell Functions }{7}% 
+\contentsline {subsection}{\numberline {2.2}Cellular Metabolism}{8}% 
+\contentsline {subsubsection}{\numberline {2.2.1}ATP Production}{8}% 
+\contentsline {subsection}{\numberline {2.3}Plasma Membrane}{9}% 
+\contentsline {subsubsection}{\numberline {2.3.1}Structure and Composition}{9}% 
+\contentsline {subsection}{\numberline {2.4}Cell-to-Cell Adhesions}{10}% 
+\contentsline {subsubsection}{\numberline {2.4.1}Biological Glue (Extracellular Matrix)}{11}% 
+\contentsline {subsubsection}{\numberline {2.4.2}Cell Junctions}{11}% 
+\contentsline {subsection}{\numberline {2.5}Overview Membrane Transport}{12}% 
+\contentsline {subsection}{\numberline {2.6}Unassisted Membrane Transport}{12}% 
+\contentsline {subsection}{\numberline {2.7}Assisted Membrane Transport}{13}% 
+\contentsline {subsection}{\numberline {2.8}Selective Permeability of the Membrane}{15}% 
+\contentsline {subsubsection}{\numberline {2.8.1}Separation of Charges }{15}% 
+\contentsline {subsubsection}{\numberline {2.8.2}Concentration / Permeability of Ions }{15}% 
+\contentsline {subsubsection}{\numberline {2.8.3}Depolarization and Hyperpolarization}{16}% 
+\contentsline {subsubsection}{\numberline {2.8.4}Electrical Signals and Ion Movement}{17}% 
+\contentsline {subsection}{\numberline {2.9}Action Potentials}{17}% 
+\contentsline {subsubsection}{\numberline {2.9.1}Reversal of Membrane Potential}{17}% 
+\contentsline {subsubsection}{\numberline {2.9.2}Restoration of Concentration}{18}% 
+\contentsline {subsubsection}{\numberline {2.9.3}Propagation of Action Potential}{19}% 
+\contentsline {subsubsection}{\numberline {2.9.4}Conduction via Nerve Fibre}{19}% 
+\contentsline {subsubsection}{\numberline {2.9.5}One-Way Propagation}{19}% 
+\contentsline {subsubsection}{\numberline {2.9.6}All-or-None Fashion }{19}% 
+\contentsline {subsubsection}{\numberline {2.9.7}Strength of Stimulus and Frequency of Action Potentials}{20}% 
+\contentsline {subsubsection}{\numberline {2.9.8}Myelination and Speed of Conduction}{20}% 
+\contentsline {subsubsection}{\numberline {2.9.9}Fibre Diameter and Velocity of Action Potential}{20}% 
+\contentsline {subsection}{\numberline {2.10}Graded Potentials}{20}% 
+\contentsline {subsection}{\numberline {2.11}Synapses and Neuronal Integration}{21}% 
+\contentsline {subsubsection}{\numberline {2.11.1}Synapses}{22}% 
+\contentsline {subsubsection}{\numberline {2.11.2}Neurotransmitters / Signal}{22}% 
+\contentsline {subsection}{\numberline {2.12}Synapse Behaviour}{22}% 
+\contentsline {subsubsection}{\numberline {2.12.1}Receptor Combinations}{23}% 
+\contentsline {subsubsection}{\numberline {2.12.2}Neurotransmitter Removal}{23}% 
+\contentsline {subsubsection}{\numberline {2.12.3}Grand Post Synaptic Potential}{23}% 
+\contentsline {subsubsection}{\numberline {2.12.4}Action Potentials at Axon Hillcock}{24}% 
+\contentsline {subsection}{\numberline {2.13}Neuropeptides as Neuromodulators}{24}% 
+\contentsline {subsubsection}{\numberline {2.13.1}Pre-synaptic Inhibition or Facilitation}{25}% 
+\contentsline {subsubsection}{\numberline {2.13.2}Drugs, Diseases, and Transmission}{25}% 
+\contentsline {subsubsection}{\numberline {2.13.3}Neurons}{25}% 
+\contentsline {section}{\numberline {3}Central Nervous System}{26}% 
+\contentsline {subsection}{\numberline {3.1}Organization of the Nervous System}{26}% 
+\contentsline {subsection}{\numberline {3.2}Central Nervous System}{27}% 
+\contentsline {subsection}{\numberline {3.3}Protection of CNS}{27}% 
+\contentsline {subsection}{\numberline {3.4}Spinal Cord}{28}% 
+\contentsline {subsection}{\numberline {3.5}Brain Stem}{29}% 
+\contentsline {subsection}{\numberline {3.6}Thalamus and Hypothalamus}{29}% 
+\contentsline {subsection}{\numberline {3.7}Cerebral Cortex}{30}% 

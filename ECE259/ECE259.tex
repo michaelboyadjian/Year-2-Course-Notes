@@ -31,7 +31,7 @@ This is proportional to and in the direction of the force $\vec{F}$. We can expr
 The two fundamental postulates of electrostatics in free space specify the \textbf{divergence} and \textbf{curl} of $\vec{E}$
 $$ \vec{ \nabla}  \cdot \vec{E} = \frac{\rho}{\epsilon_0} \quad \quad \quad \vec{ \nabla}  \times \vec{E} =0 $$
 These two expression are point relations, and are referred to as the differential form of the postulates of electrostatics. We can integrate to get the expressions for a total field of an aggregate or a distribution of charges.
-$$ \oint_{S} \vec{ E}  \cdot ds = \frac{Q}{\epsilon_0}\quad \quad \quad \\oint_{C} \vec{ E}  \cdot dl = 0 $$
+$$ \oint_{S} \vec{ E}  \cdot ds = \frac{Q}{\epsilon_0}\quad \quad \quad \oint_{C} \vec{ E}  \cdot dl = 0 $$
 
 
 \subsection{Coulomb's Law}
@@ -50,14 +50,25 @@ $$ \vec{E} = \frac{1}{4\pi\epsilon_0} \sum_{k=1}^{n} \frac{q_k (\vec{R} - \vec{R
 The electric field from a distribution of charge can be obtained by integrating the contribution of an element charge over the charge distribution. The differential element is the following:
 $$ d\vec{E} = \vec{a_R}\frac{\rho dv'}{4\pi \epsilon_0 R^2} $$
 Integrating this, we get:
-$$ \vec{E} = \frac{1}{4\pi\epsilon_0} \int_{V'} \rho \frac{\vec{R}}{R^3} dv' 	\quad	\left[\frac{V}{m}\right] $$
+$$ \vec{E} = \frac{1}{4\pi\epsilon_0} \int_{V'} \vec{a_R} \frac{\rho_v}{R^2} dv' =  \frac{1}{4\pi\epsilon_0} \int_{V'} \vec{a_R} \frac{dQ'}{R^2}  	\quad	\left[\frac{V}{m}\right] $$
 This is integrating a charge over the volume. If we want to integrate over the surface, then:
-$$ \vec{E} = \frac{1}{4\pi\epsilon_0} \int_{S'} \vec{a_R}\frac{\rho_S}{R^2} ds'	\quad	 \left[\frac{V}{m}\right] $$
+$$ \vec{E} = \frac{1}{4\pi\epsilon_0} \int_{S'} \vec{a_R}\frac{\rho_s}{R^2} ds' = \frac{1}{4\pi\epsilon_0} \int_{S'} \vec{a_R}\frac{dQ'}{R^2} 	\quad	 \left[\frac{V}{m}\right] $$
 Likewise, if we have a line charge:
-$$ \vec{E} = \frac{1}{4\pi\epsilon_0} \int_{L'} \vec{a_R}\frac{\rho_l}{R^2} dl'	\quad	 \left[\frac{V}{m}\right] $$
+$$ \vec{E} = \frac{1}{4\pi\epsilon_0} \int_{L'} \vec{a_R}\frac{\rho_l}{R^2} dl' =  \frac{1}{4\pi\epsilon_0} \int_{L'} \vec{a_R}\frac{dQ'}{R^2}\quad	 \left[\frac{V}{m}\right] $$
+
 \subsection{Gauss's Law and Applications}
+Gauss's Law follows from the divergence postulate of electrostatics by application of the divergence theorem. It states that the total outward flux of the electric field over any closed surface in free space is equal to the total charge enclosed in any surface divided by $\epsilon_0$.
+$$ \oint_{S} \vec{ E}  \cdot ds = \frac{Q}{\epsilon_0} \quad \text{or} \quad \oint_{S} \vec{ D}  \cdot ds = Q $$
+where $\vec{D}$ is related to $\vec{E}$ by $\vec{D} = \epsilon_r \epsilon_0 \vec{E}$
 
 \subsection{Electric Potential}
+We define a scalar potential $V$ such that 
+$$ \vec{E} = -\nabla V$$
+Electrical potential refers to the work done in carrying a charge from one point to another. To move a unit charge from a point $P_1$ to point $P_2$, work must be done against the electric field and is equal to 
+$$ \frac{W}{q} = - \int \limits_{P_1}^{P_2} \vec{E} \cdot dl $$
+This represents the difference in electric potential between the two points and thus, we have
+$$ \Delta V = V_2 - V_1 = - \int \limits_{P_1}^{P_2} \vec{E} \cdot dl $$
+
 
 \subsection{Dielectrics in Static Electric Field}
 

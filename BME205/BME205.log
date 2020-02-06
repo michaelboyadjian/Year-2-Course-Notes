@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex 2019.5.8)  18 JAN 2020 21:29
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex 2019.5.8)  6 FEB 2020 06:26
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -223,59 +223,102 @@ File: uesint.fd
 ) [1
 
 {/usr/local/texlive/2019/texmf-var/fonts/map/pdftex/updmap/pdftex.map}] (./BME2
-05.toc)
+05.toc
+[2])
 \tf@toc=\write3
 \openout3 = `BME205.toc'.
 
-
-[2]
+ [3]
 LaTeX Font Info:    Try loading font information for OMS+cmr on input line 37.
  (/usr/local/texlive/2019/texmf-dist/tex/latex/base/omscmr.fd
 File: omscmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10.95> not available
 (Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 37.
- [3]
+ [4]
 Underfull \hbox (badness 10000) in paragraph at lines 68--71
 
  []
 
-
+[5]
 Underfull \hbox (badness 10000) in paragraph at lines 73--75
 
  []
 
-[4]
+
 Underfull \hbox (badness 10000) in paragraph at lines 76--78
 
  []
 
-[5]
-Underfull \hbox (badness 10000) in paragraph at lines 91--119
+[6]
+<cells1.png, id=27, 567.62062pt x 385.94188pt>
+File: cells1.png Graphic file (type png)
+<use cells1.png>
+Package pdftex.def Info: cells1.png  used on input line 101.
+(pdftex.def)             Requested size: 482.4798pt x 328.05214pt.
+
+Overfull \hbox (12.72478pt too wide) in paragraph at lines 101--102
+[][] 
+ []
+
+<cells2.png, id=29, 563.10374pt x 313.17pt>
+File: cells2.png Graphic file (type png)
+<use cells2.png>
+Package pdftex.def Info: cells2.png  used on input line 104.
+(pdftex.def)             Requested size: 478.64044pt x 266.19574pt.
+
+Overfull \hbox (8.88542pt too wide) in paragraph at lines 104--105
+[][] 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 99--107
 
  []
 
-[6] [7] (./BME205.aux) ) 
+[7 <./cells1.png>] [8 <./cells2.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 158--160
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 158--160
+
+ []
+
+[9] [10] [11] [12] [13] [14] [15] [16] [17]
+Overfull \hbox (7.74414pt too wide) in paragraph at lines 569--570
+[]\OT1/cmr/m/n/10.95 Slow clos-ing of $\OML/cmm/m/it/10.95 K[]$ \OT1/cmr/m/n/10
+.95 gates cause more $\OML/cmm/m/it/10.95 K[]$ \OT1/cmr/m/n/10.95 to leave than
+ nec-es-sary caus-ing hyper-polarization 
+ []
+
+[18] [19] [20] [21] [22] [23] [24] [25] [26] [27] [28] [29] [30] (./BME205.aux)
+ ) 
 Here is how much of TeX's memory you used:
- 2263 strings out of 492616
- 30944 string characters out of 6129482
- 100721 words of memory out of 5000000
- 6146 multiletter control sequences out of 15000+600000
- 10323 words of font info for 40 fonts, out of 8000000 for 9000
+ 2274 strings out of 492616
+ 31108 string characters out of 6129482
+ 102721 words of memory out of 5000000
+ 6155 multiletter control sequences out of 15000+600000
+ 9977 words of font info for 39 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 41i,9n,25p,472b,195s stack positions out of 5000i,500n,10000p,200000b,80000s
-</usr/local/texlive/2019/texmf-dist/fonts/type1/public/
-amsfonts/cm/cmbx10.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/a
-msfonts/cm/cmbx12.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/am
-sfonts/cm/cmr10.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsf
-onts/cm/cmr12.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfon
-ts/cm/cmr17.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts
-/cm/cmsy10.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/
-cm/cmti10.pfb>
-Output written on BME205.pdf (7 pages, 101029 bytes).
+ 41i,7n,25p,575b,401s stack positions out of 5000i,500n,10000p,200000b,80000s
+</usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb
+></usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb>
+</usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb><
+/usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></
+usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></us
+r/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/
+local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/lo
+cal/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/loca
+l/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/local/t
+exlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texl
+ive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texli
+ve/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb>
+Output written on BME205.pdf (30 pages, 428474 bytes).
 PDF statistics:
- 56 PDF objects out of 1000 (max. 8388607)
- 39 compressed objects within 1 object stream
+ 154 PDF objects out of 1000 (max. 8388607)
+ 104 compressed objects within 2 object streams
  0 named destinations out of 1000 (max. 500000)
- 1 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 11 words of extra memory for PDF output out of 10000 (max. 10000000)
 

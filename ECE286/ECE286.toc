@@ -12,9 +12,7 @@
 \contentsline {subsubsection}{\numberline {2.6.1}Independent Events}{6}% 
 \contentsline {subsubsection}{\numberline {2.6.2}Product Rule and Multiplicative Rule}{6}% 
 \contentsline {subsection}{\numberline {2.7}Bayes' Rule}{7}% 
-\contentsline {section}{\numberline {3}Random Variables, Probability Distributions and Expectation}{8}% 
-\contentsline {section}{\numberline {4}Discrete and Continuous Probability Distributions}{8}% 
-\contentsline {section}{\numberline {5}Functions of Random Variables}{8}% 
-\contentsline {section}{\numberline {6}Estimation Problems}{8}% 
-\contentsline {section}{\numberline {7}Hypothesis Testing}{8}% 
-\contentsline {section}{\numberline {8}Simple Linear Regression and Correlation}{8}% 
+\contentsline {section}{\numberline {3}Random Variables and Probability Distributions}{8}% 
+\contentsline {subsection}{\numberline {3.1}Concept of a Random Variable}{8}% 
+\contentsline {subsection}{\numberline {3.2}Discrete Probability Distributions}{8}% 
+\contentsline {subsection}{\numberline {3.3}Continuous Probability Distributions}{8}% 

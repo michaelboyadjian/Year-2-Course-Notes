@@ -132,17 +132,41 @@ $$ P(A_1 \cap A_2 \cap \cdots \cap A_k) = P(A_1)P(A_2|A_1)P(A_3|A_1 \cap A_2) \c
 $$ P(A_1 \cap A_2 \cap \cdots \cap A_k) = P(A_1)P(A_2)P(A_3) \cdots P(A_k)$$
 
 \subsection{Bayes' Rule}
-Bayes' Rule tells us the following. If the events $B_1$ , $B_2$ , . . . , $B_k$ constitute a partition of the sample space $S$ such that $P(B_i) \neq 0$ for$ i = 1$,$2$,$...$,$k$, then for any event $A$ in $S$ such that $P(A) /neq 0$,
+Bayes' Rule tells us the following. If the events $B_1$ , $B_2$ , . . . , $B_k$ constitute a partition of the sample space $S$ such that $P(B_i) \neq 0$ for$ i = 1$,$2$,$...$,$k$, then for any event $A$ in $S$ such that $P(A) \neq 0$,
 $$ P(B_r | A) = \frac{P(B_r \cap A)}{\sum_{i=1}^{k} P(B_i \cap A) } = \frac{P(B_r) P(A | B_r)}{\sum_{i=1}^{k} P(B_i)P(A|B_i) }$$
 
 \pagebreak
 
-\section{Random Variables, Probability Distributions and Expectation}
-\section{Discrete and Continuous Probability Distributions}
-\section{Functions of Random Variables}
-\section{Estimation Problems}
-\section{Hypothesis Testing}
-\section{Simple Linear Regression and Correlation}
+\section{Random Variables and Probability Distributions}
+
+\subsection{Concept of a Random Variable}
+A random variable is a function that associates a real number with each element in the sample space. This allows us to do math on a random experiment and map outcomes to the real line. We can classify a sample space of random variables in two ways:
+\begin{itemize}
+\item \textbf{Discrete Sample Space:}  Contains a finite number of possibilities or an unending sequence with as many elements as there are whole numbers
+\item \textbf{Continuous Sample Space:} Contains an infinite number of possibilities equal to the number of points on a line segment
+\end{itemize}
+
+\subsection{Discrete Probability Distributions}
+A discrete random variable assumes each of its values with a certain probability. The set of ordered pairs $(x, f (x))$ is a \textbf{probability function}, \textbf{probability mass function}, or \textbf{probability distribution} of the discrete random variable $X$ if, for each possible outcome $x$
+\begin{enumerate}
+\item $f(x) \geq 0$
+\item $\sum_x  f(x) = 1$
+\item $P(X=x) = f(x)$
+\end{enumerate}
+In cases where we want to determine the probability that the observed value $X$ is less than or equal to some real $x$, we can use what is called the \textbf{cumulative distribution function}. $F(x)$ of a discrete random variable $X$ with probability distribution $f(x)$ is 
+$$ F(x) = P(X \leq x) = \sum_{t \leq x} f(t) \quad \quad \text{for } -\infty < x < \infty $$
+
+\subsection{Continuous Probability Distributions}
+A continuous random variable has a probability of $0$ of assuming exactly any of its values, so we are unable to give its probability distribution in tabular form. In dealing with continuous distributions, note the following:
+$$P(a<x\leq b) = P(a<x<b) + P(x=b) = P(a<x<b)$$
+This tells us that we do not need to include an endpoint of the interval if $X$ is continuous. We can define a probability density function for a continuous random variable $X$. The function $f(x)$ is a \textbf{probability density function} for the continuous random variable $X$, defined over the set of real numbers, if
+\begin{enumerate}
+\item $f(x) \geq 0$, for all $x \in R$
+\item $\int \limits_{-\infty}^{\infty} f(x) dx = 1$
+\item $P(a<x<b) = \int \limits_{a}^{b} f(x) dx $
+\end{enumerate}
+Similar to discrete distributions, we can also define a probability distribution function to determine the probability that the observed value $X$ is less than or equal to some real $x$. The \textbf{cumulative distribution function} $F(x)$ of a continuous random variable $X$ with density $f(x)$ is 
+$$ F(x) = P(X \leq x) = \int \limits_{-\infty}^{x} f(t) dt\quad \quad \text{for } -\infty < x < \infty $$
 
 
 \end{document}
