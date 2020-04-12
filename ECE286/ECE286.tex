@@ -168,5 +168,80 @@ This tells us that we do not need to include an endpoint of the interval if $X$ 
 Similar to discrete distributions, we can also define a probability distribution function to determine the probability that the observed value $X$ is less than or equal to some real $x$. The \textbf{cumulative distribution function} $F(x)$ of a continuous random variable $X$ with density $f(x)$ is 
 $$ F(x) = P(X \leq x) = \int \limits_{-\infty}^{x} f(t) dt\quad \quad \text{for } -\infty < x < \infty $$
 
+\subsection{Joint Probability Distributions}
+\subsubsection{Discrete RVs}
+If $X$ and $Y$ are two \underline{discrete} random variables, the probability distribution for their simultaneous occurrence can be represented by $f(x,y)$ for any pair of values $(x, y)$ within the range of the random variables $X$ and $Y$ . It is customary to refer to this function as the \textbf{joint probability distribution} of $X$ and $Y$. 
+\\ \\
+$f(x,y)$ is a \textbf{joint probability distribution} or \textbf{probability mass function} of the discrete random variables $X$ and $Y$ if
+\begin{enumerate}
+\item $f(x,y) \geq 0$ for all $(x,y)$
+\item $\sum_x \sum_y f(x,y) = 1$
+\item $P(X=x, Y=y) = f(x,y)$
+\end{enumerate}
+For any region $A$ in the $xy$ plane, $P[(X, Y) \in A] = \sum \sum_A f(x,y)$
+\subsubsection{Continuous RVs}
+When $X$ and $Y$ are \underline{continuous} random variables, the \textbf{joint density function} $f(x,y)$ is a surface lying above the $xy$ plane, and $P[(X,Y) \in A]$, where $A$ is any region in the $xy$ plane, is equal to the volume of the right cylinder bounded by the base $A$ and the surface.
+\\ \\ 
+The function $f(x,y)$ is a \textbf{joint density function} of the continuous random variables $X$ and $Y$ if 
+\begin{enumerate}
+\item $f(x,y) \geq 0$ for all $(x,y)$
+\item $\int \limits_{-\infty}^{\infty} \int \limits_{-\infty}^{\infty} f(x,y) dx dy = 1$
+\item $P[(X, Y) \in A] = \int \int _A f(x,y) dx dy$ for any region $A$ in the $xy$ plane
+\end{enumerate}
+
+\pagebreak
+\subsubsection{Marginal Distributions}
+Given the joint probability distribution $f (x, y)$ of the discrete random variables $X$ and $Y$ , the probability distribution $g(x)$ of $X$ alone is obtained by summing $f (x, y)$ over the values of $Y$ . Similarly, the probability distribution $h(y)$ of $Y$ alone is obtained by summing $f(x,y)$ over the values of $X$. We define $g(x)$ and $h(y)$ to be the \textbf{marginal distributions} of $X$ and $Y$ , respectively. When $X$ and $Y$ are continuous random variables, summations are replaced by integrals. 
+\\ \\
+The marginal distributions ox $X$ alone and $Y$ alone are
+$$ g(x) = \sum \limits _y f(x,y) \quad \quad \text{and} \quad \quad  h(y) = \sum \limits _x f(x,y)$$
+$$ g(x) = \int \limits_{-\infty}^{\infty} f(x,y) \quad \quad \text{and} \quad \quad  h(y) = \int \limits_{-\infty}^{\infty} f(x,y)$$
+for the discrete and continuous cases respectively
+
+\section{Mathematical Expectation}
+
+\subsection{Mean of a Random Variable}
+\subsection{Variance and Covariance of Random Variables}
+\subsection{Means and Variance of Linear Combinations of Random Variables}
+
+\pagebreak
+\section{Discrete Probability Distributions}
+\subsection{Binomial Distribution}
+\subsection{Hypergeometric Distribution}
+\subsection{Negative Binomial and Geometric Distributions}
+\subsection{Poisson Distribution}
+
+\pagebreak
+
+\section{Continuous Probability Distributions}
+\subsection{Uniform Distribution}
+The continuous uniform distribution is one of the simplest statistical distributions. It has a "flat" density function with uniform probability in an interval [$A$, $B$]. It is  often referred to as a \textbf{"rectangular distribution"} as the density function forms a rectangle with base $B-A$ and a constant height of $\frac{1}{B-A}$. \\ \\
+The density function of the continuous uniform random variable $X$ on the interval [$A$, $B$] is
+$$ f(x; A, B) =   \left\{
+\begin{array}{lll}
+      \frac{1}{B-A} & \text{,} & A\leq x\leq B \\
+      0 & \text{,} & \text{elsewhere} \\
+\end{array} 
+\right. $$
+The mean and variance of the uniform distribution are given as follows:
+$$ \mu = \frac{A+B}{2} \quad \quad \quad \sigma^2 = \frac{(B-A)^2}{12}$$
+\subsection{Normal Distribution}
+The normal distribution, often called the \textbf{Gaussian distribution}, is the most important distribution in statistics. Its graph is called the \textbf{normal curve} and appears as a bell shape and a continuous variable $X$ having this distribution is called the \textbf{normal random variable}. Thus, the density of the normal random variable $X$, with mean $\mu$ and variance $\sigma^2$, is given over all space as
+$$ n(x; \mu, \sigma) = \frac{1}{\sqrt{2\pi}\sigma} e ^ {- \frac{1}{2\sigma^2} (x-\mu)^2}$$
+Some important properties of the normal distribution include the following:
+\begin{enumerate}
+\item The mode occurs at $x=\mu$
+\item The curve is symmetric about a vertical axis through the mean $\mu$
+\item The curve has its points of inflection at $x = \mu \pm \sigma$; it is concave downward if $ \mu - \sigma < X < \mu + \sigma $ and is concave upward otherwise.
+\item The normal curve approaches the horizontal axis asymptotically as we proceed
+in either direction away from the mean
+\item The total area under the curve and above the horizontal axis is equal to 1
+\end{enumerate}
+The mean and variance of the normal distribution are $\mu$ and $\sigma^2$ respectively. Now in order to calculate the probability of $X$ assuming a value between $x_1$ and $x_2$, we would have to integrate for the area under the curve. This could easily be done, however, using what is called the \textbf{standard normal distribution} 
+\\ \\ In a standard distribution of a random variable $Z$ the mean is 0 and the variance is 1. We apply the following transformation to obtain the $Z$ variable.
+$$ Z  = \frac{X - \mu}{\sigma}$$
+Using the values of $Z$ we are thus able to use tables to compute the probabilities
+$$ P(x_1 \leq X \leq x_2) = \frac{1}{\sqrt{2\pi} \sigma} \int \limits _{x_1}^{x_2}  e ^ {- \frac{1}{2\sigma^2} (x-\mu)^2} dx = \int \limits _{z_1}^{z_2}  n(z; 0, 1) dz = P(z_1 \leq Z \leq  < z_2)$$
+\subsection{Gamma and Exponential Distribution}
 
 \end{document}
